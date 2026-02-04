@@ -238,7 +238,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#you-are-here" id="toc-you-are-here" class="nav-link active" data-scroll-target="#you-are-here">You are here:</a></li>
   <li><a href="#from-issues-to-lines-of-code" id="toc-from-issues-to-lines-of-code" class="nav-link" data-scroll-target="#from-issues-to-lines-of-code">From Issues to lines of code</a></li>
-  <li><a href="#what-main-should-represent" id="toc-what-main-should-represent" class="nav-link" data-scroll-target="#what-main-should-represent">What <code>main</code> should represent</a></li>
   <li><a href="#forks-vs-branches" id="toc-forks-vs-branches" class="nav-link" data-scroll-target="#forks-vs-branches">Forks vs branches</a></li>
   <li><a href="#branch-naming-matters" id="toc-branch-naming-matters" class="nav-link" data-scroll-target="#branch-naming-matters">Branch naming matters</a></li>
   <li><a href="#commit-messages" id="toc-commit-messages" class="nav-link" data-scroll-target="#commit-messages">Commit messages</a></li>
@@ -287,18 +286,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="op">&lt;</span>files<span class="op">&gt;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">'did some stuff`</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="st">git push</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This is fine for individual work.</p>
+<p>This is fine for individual work. We don’t necessarily need branches, since the work is “linear”.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What are <code>main</code>, branches and forks?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider our GitHub repository like a tree. <code>main</code> represents the <em>trunk</em> of that tree - it is the central, <em>stable</em> point of focus for our project.</p>
+<p><em>Branches</em> and <em>forks</em> are different ways to create a separate workspace where you can work in isolation from <code>main</code>. The idea is that once work on the branch is complete, it will be <em>merged</em> into <code>main</code>.</p>
+<ul>
+<li><p>Branches are internal to the repository you are working on. They <em>branch out</em> from the <em>trunk</em>.</p></li>
+<li><p>Forks are <em>entirely separate</em> separate copies of the repository. Often, someone will create a fork to copy a repository they like (but don’t own) and work on it separately or implement a feature/fix. This work can be merged back into the original repository if desired.</p>
+<ul>
+<li>Sometimes, a fork can spin out into its own thing entirely - e.g.&nbsp;<a href="https://www.libreoffice.org/">LibreOffice</a> was originally a fork of <a href="https://www.openoffice.org/">OpenOffice</a>.</li>
+</ul></li>
+</ul>
+</div>
+</div>
 <blockquote class="blockquote">
 <p>The question is - how to implement our ideas when we’re working as a <em>team</em>?</p>
 </blockquote>
-</section>
-<section id="what-main-should-represent" class="level2">
-<h2 class="anchored" data-anchor-id="what-main-should-represent">What <code>main</code> should represent</h2>
-<p>Think of <code>main</code> as the latest <strong>stable</strong> working version of your project.</p>
-<p>If lots of people independently commit to <code>main</code>, it is much less likely to be stable.</p>
 <section id="when-to-commit-to-the-main-branch" class="level3">
 <h3 class="anchored" data-anchor-id="when-to-commit-to-the-main-branch">When to commit to the <code>main</code> branch</h3>
-<p>Direct commits to main are fine for work that only you use. For team work: don’t.</p>
+<p>Direct commits to main are fine for work that only you use. For team work: generally don’t. If lots of people independently commit to <code>main</code>, it is much less likely to be stable.</p>
 <hr>
 </section>
 <section id="why-committing-to-main-is-a-problem-in-team-projects" class="level3">
@@ -325,20 +340,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Open a <strong>pull request</strong></li>
 <li>Merge into <code>main</code> once reviewed</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Doesn’t this use valuable time that I could spend coding/writing?
-</div>
-</div>
-<div class="callout-body-container callout-body">
+</section>
+<section id="doesnt-this-use-valuable-time-that-i-could-spend-codingwriting" class="level3">
+<h3 class="anchored" data-anchor-id="doesnt-this-use-valuable-time-that-i-could-spend-codingwriting">Doesn’t this use valuable time that I could spend coding/writing?</h3>
 <p>This workflow might take longer than the simple <code>git add/git commit</code> workflow from above.</p>
 <p>However, if <em>one person</em> messes up a commit, it inhibits the work of <em>everyone</em> to go back and untangle it; a job which is made harder since you are likely the only person with any information on what occurred and why. This is significantly mitigated with a branch -&gt; PR workflow.</p>
-</div>
-</div>
 <hr>
 </section>
 </section>
