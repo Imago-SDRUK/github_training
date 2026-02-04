@@ -1,8 +1,8 @@
+---
+title: 'Wrap up - 15 mins'
+---
 
-
-## Wrap up and Q&A - 15 mins 
-
-### Specific Tips
+## Specific Tips
 
 This section goes through some of the specific questions that members of the Imago team had before putting together this workshop.
 
@@ -15,7 +15,7 @@ Prevention is better than cure however!
 
 ### How to cite effectively?
 
-#### Other thoughts
+## Other thoughts
 
 - Don't worry about perfection straight away. Issues are where all your messy ideas can live. Worry about polish just before you're ready to merge it in - remember `main` is where things need to be polished. 
 - Documentation is key! You're more likely to waste time/be stressed/want to quit academia when you can't remember how and why you did anything down the line (and neither can your colleagues) writing a paper than you will spending 10 minutes a day/week writing documentation and populating Issues. 
@@ -43,3 +43,5 @@ Prevention is better than cure however!
 - Suggestions not blockers.
 - Perfect is the enemy of merged.
 - Use your team - ask for help on both technical and conceptual problems! 
+
+---

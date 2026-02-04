@@ -1,7 +1,6 @@
 ---
-title: Committing your work – 15 mins
+title: "Committing your work – 15 mins"
 subtitle: "Commits, branches and forks"
-
 ---
 
 ## You are here:

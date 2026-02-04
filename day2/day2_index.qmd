@@ -10,7 +10,6 @@ Topics:
 - How to deal with the merge conflicts that do arise 
 - Tips and tricks 
 - Standard operating procedure (SOP)
-- Q&A
 
 These topics were not covered in the first GitHub workshop run by Batool - here I will introduce them and give some guidance on what to do if you 
 are asked to review code or encounter merge conflicts. 

@@ -1,12 +1,11 @@
 ---
-title: Standard operating procedure for Imago repositories
+title: "Standard operating procedure for Imago repositories"
 number-sections: false
 ---
 
 This document describes how we should work collaboratively in Imago repositories.
 
 > Issue -> Branch -> Pull Request -> Review -> Merge -> Close
-
 
 ## 1. Create an Issue
 
@@ -85,3 +84,5 @@ Guidance for reviewers:
 - Merge when the PR has at least one approval.
 - Ensure linked Issues are auto-closed or manually closed.
 - Update relevant documentation or examples.
+
+---

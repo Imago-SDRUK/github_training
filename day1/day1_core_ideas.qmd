@@ -1,6 +1,6 @@
 ---
-title: Core concepts – 10 mins
-subtitle: What we should be doing and why 
+title: "Core concepts – 10 mins"
+subtitle: "What we should be doing and why"
 ---
 
 

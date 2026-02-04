@@ -1,10 +1,6 @@
-
-
 ---
-title: Day 1 wrap up 
+title: "Day 1 wrap up"
 ---
-
-
 
 ## Day 1 wrap‑up 
 

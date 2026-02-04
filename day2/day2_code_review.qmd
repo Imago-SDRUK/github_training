@@ -1,8 +1,8 @@
-
 ---
 title: "Code review"
 subtitle: "Ensuring our products are stable and high-quality"
 ---
+
 Code review is intended to ensure that `main` is *main*tainable and kept to a high quality. 
 The idea is that more than one person in the team should be able to understand what developments are being made from a technical perspective, 
 and ensure that any changes that are made don't make the product worse rather than better.
@@ -10,8 +10,8 @@ and ensure that any changes that are made don't make the product worse rather th
 ### Choosing your reviewer
 
 Pick a colleague who is:
-a) best-placed to understand how and why you have done what you have done. 
-b) available to review! 
+- 1: best-placed to understand how and why you have done what you have done. 
+- 2: available to review! 
 
 You should use the buttons to assign them to be a reviewer - this is not a faux pas, but a useful way to draw someone's attention to some work they're probably interested in. 
 
