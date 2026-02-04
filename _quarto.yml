@@ -41,6 +41,7 @@ number-depth: 2
 format:
   html:
     theme: cosmo
+    css: styles.css
     toc: true
     toc-location: left  
     toc-depth: 2

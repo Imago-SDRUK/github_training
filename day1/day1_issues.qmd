@@ -125,6 +125,7 @@ This is an example of what an Issue might look like - it can be more or less ver
 
 #### Issue (by @original_author)
 
+:::{.issue-box}
 #### Add seasonal aggregation option to the LST processing
 
 ##### Summary
@@ -137,14 +138,16 @@ We currently provide annual land surface temperature aggregates. Several interna
 4. Export to a new `seasonal/` directory in the output directory.
 
 Open questions:
+
 - Should users be able to define custom seasonal groupings, or stick with the standard meteorological seasons (DJF etc.)
 - How do we actually implement this into our pipeline? 
 - How do we make this work in practice? Annual processing was already stretching memory limits on the server.
 
+:::
 
 #### Comment 1 (by @original_author)
 
----
+:::{.issue-box}
 
 I've added `season` to `config.yaml`, which can now be either `annual` (default behaviour as before) or `seasonal`. 
 
@@ -155,10 +158,11 @@ However, `polars` has a utility (`foo`) that we can use directly on the input `D
 
 Next step is that memory issue... any ideas @helpful_rseperson? 
 
+:::
 
 #### Comment 2 (by @helpful_rseperson)
 
----
+:::{.issue-box}
 
 I think we can solve the memory issue using chunking. Rather than processing each tile sequentially in a loop, we can use `dask` `DataFrames` - these are read in lazily, so we break up each file into bits that can fit into memory.
 
@@ -174,6 +178,8 @@ with
 <python_code_with_chunked_tasks>
 ``` 
 this should now work. Let me know how it goes - shout if you need help!
+
+:::
 
 ---
 
