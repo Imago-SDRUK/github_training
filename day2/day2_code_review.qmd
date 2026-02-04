@@ -101,8 +101,6 @@ Before merging:
 - Press the “Merge pull request” button.
 	- GitHub will show a green button at the bottom of the PR once everything is ready.
 
-TODO - images
-
 ### Who merges?
 
 This is dependent on who has write access in the repository. In Imago, most of us have write access to repositories we are working on. 
