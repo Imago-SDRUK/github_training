@@ -108,6 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -411,7 +412,7 @@ Tip
 <section id="issue-by-original_author" class="level4">
 <h4 class="anchored" data-anchor-id="issue-by-original_author">Issue (by <span class="citation" data-cites="original_author">@original_author</span>)</h4>
 </section>
-<section id="add-seasonal-aggregation-option-to-the-lst-processing" class="level4">
+<section id="add-seasonal-aggregation-option-to-the-lst-processing" class="level4 issue-box">
 <h4 class="anchored" data-anchor-id="add-seasonal-aggregation-option-to-the-lst-processing">Add seasonal aggregation option to the LST processing</h4>
 <section id="summary" class="level5">
 <h5 class="anchored" data-anchor-id="summary">Summary</h5>
@@ -425,26 +426,33 @@ Tip
 <li>Plug this into the same statistics pipeline we use for annual outputs.</li>
 <li>Export to a new <code>seasonal/</code> directory in the output directory.</li>
 </ol>
-<p>Open questions: - Should users be able to define custom seasonal groupings, or stick with the standard meteorological seasons (DJF etc.) - How do we actually implement this into our pipeline? - How do we make this work in practice? Annual processing was already stretching memory limits on the server.</p>
+<p>Open questions:</p>
+<ul>
+<li>Should users be able to define custom seasonal groupings, or stick with the standard meteorological seasons (DJF etc.)</li>
+<li>How do we actually implement this into our pipeline?</li>
+<li>How do we make this work in practice? Annual processing was already stretching memory limits on the server.</li>
+</ul>
 </section>
 </section>
 <section id="comment-1-by-original_author" class="level4">
 <h4 class="anchored" data-anchor-id="comment-1-by-original_author">Comment 1 (by <span class="citation" data-cites="original_author">@original_author</span>)</h4>
-<hr>
+<div class="issue-box">
 <p>I’ve added <code>season</code> to <code>config.yaml</code>, which can now be either <code>annual</code> (default behaviour as before) or <code>seasonal</code>.</p>
 <p><code>imago-toolkit/pull/25</code> in <code>imago-toolkit</code> has been set up to merge in the support for seasonal processing in the main pipeline.</p>
 <p>I tried a few things in <code>/demo/seasonal_testing.ipynb</code>. Using <code>datetime</code> out-of-the-box didn’t work because of the input data format. However, <code>polars</code> has a utility (<code>foo</code>) that we can use directly on the input <code>DataFrame</code> - this seems to work!</p>
 <p>Next step is that memory issue… any ideas <span class="citation" data-cites="helpful_rseperson">@helpful_rseperson</span>?</p>
+</div>
 </section>
 <section id="comment-2-by-helpful_rseperson" class="level4">
 <h4 class="anchored" data-anchor-id="comment-2-by-helpful_rseperson">Comment 2 (by <span class="citation" data-cites="helpful_rseperson">@helpful_rseperson</span>)</h4>
-<hr>
+<div class="issue-box">
 <p>I think we can solve the memory issue using chunking. Rather than processing each tile sequentially in a loop, we can use <code>dask</code> <code>DataFrames</code> - these are read in lazily, so we break up each file into bits that can fit into memory.</p>
 <p>See (link_to_docs) for more info. I think if you replace:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>python_code_with_loops<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>with</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>python_code_with_chunked_tasks<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>this should now work. Let me know how it goes - shout if you need help!</p>
+</div>
 <hr>
 </section>
 </section>
