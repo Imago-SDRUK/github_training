@@ -44,5 +44,3 @@ format:
     toc: true
     toc-location: left   # 👈 move “On this page” to the left pane (below chapters)
     toc-depth: 2
-  pdf:
-    documentclass: scrreprt
