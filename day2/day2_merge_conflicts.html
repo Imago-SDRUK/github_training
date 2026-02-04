@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Resolving merge conflicts – Making the most out of GitHub for collaborative work (for Imago staff)</title>
+<title>Resolving merge conflicts – Making the most out of GitHub for collaborative work (for Imago staff)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -183,7 +183,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../day2/day2_wrapup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Wrap up - 15 mins</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Wrap up</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -200,10 +200,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#what-is-a-merge-conflict" id="toc-what-is-a-merge-conflict" class="nav-link active" data-scroll-target="#what-is-a-merge-conflict"><span class="header-section-number">8.1</span> What is a merge conflict?</a></li>
-  <li><a href="#resolving-merge-conflicts" id="toc-resolving-merge-conflicts" class="nav-link" data-scroll-target="#resolving-merge-conflicts"><span class="header-section-number">8.2</span> Resolving merge conflicts</a></li>
-  <li><a href="#how-do-we-avoid-them-in-the-first-place" id="toc-how-do-we-avoid-them-in-the-first-place" class="nav-link" data-scroll-target="#how-do-we-avoid-them-in-the-first-place"><span class="header-section-number">8.3</span> How do we avoid them in the first place?</a></li>
-  <li><a href="#take-homes-on-merge-conflicts" id="toc-take-homes-on-merge-conflicts" class="nav-link" data-scroll-target="#take-homes-on-merge-conflicts"><span class="header-section-number">8.4</span> Take-homes on merge conflicts</a></li>
+  <li><a href="#what-is-a-merge-conflict" id="toc-what-is-a-merge-conflict" class="nav-link active" data-scroll-target="#what-is-a-merge-conflict">What is a merge conflict?</a></li>
+  <li><a href="#resolving-merge-conflicts" id="toc-resolving-merge-conflicts" class="nav-link" data-scroll-target="#resolving-merge-conflicts">Resolving merge conflicts</a></li>
+  <li><a href="#how-do-we-avoid-them-in-the-first-place" id="toc-how-do-we-avoid-them-in-the-first-place" class="nav-link" data-scroll-target="#how-do-we-avoid-them-in-the-first-place">How do we avoid them in the first place?</a></li>
+  <li><a href="#take-homes-on-merge-conflicts" id="toc-take-homes-on-merge-conflicts" class="nav-link" data-scroll-target="#take-homes-on-merge-conflicts">Take-homes on merge conflicts</a></li>
   </ul>
 <div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/JonElsey/github_training/edit/main/day2/day2_merge_conflicts.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/JonElsey/github_training/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
 </nav>
@@ -216,7 +216,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../day2/day2_index.html">Day 2 - Code review, merge conflicts and standard workflows</a></li><li class="breadcrumb-item"><a href="../day2/day2_merge_conflicts.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Resolving merge conflicts</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Resolving merge conflicts</span></h1>
+<h1 class="title"><span class="chapter-title">Resolving merge conflicts</span></h1>
 </div>
 
 
@@ -233,8 +233,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="what-is-a-merge-conflict" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="what-is-a-merge-conflict"><span class="header-section-number">8.1</span> What is a merge conflict?</h2>
+<section id="what-is-a-merge-conflict" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-merge-conflict">What is a merge conflict?</h2>
 <p>A merge conflict happens when Git says:</p>
 <blockquote class="blockquote">
 <p>“There are two versions of this file, and I can’t combine them automatically. You need to tell me what the correct version is.”</p>
@@ -267,8 +267,8 @@ branch B2:       - B2 - - - - -
 <p>If both branches changed different parts of the file, Git will resolve it automatically. If both changed the same part, Git asks you to <em>choose</em>.</p>
 </section>
 </section>
-<section id="resolving-merge-conflicts" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="resolving-merge-conflicts"><span class="header-section-number">8.2</span> Resolving merge conflicts</h2>
+<section id="resolving-merge-conflicts" class="level2">
+<h2 class="anchored" data-anchor-id="resolving-merge-conflicts">Resolving merge conflicts</h2>
 <p><strong>The best way to resolve conflicts by updating your branch with <code>main</code></strong> (merge <code>main</code> into your branch), then fixing conflicts locally.</p>
 <p>In the updated diagram below, we merge <code>main</code> into <code>B2</code> and end up with a new updated file <code>BA2</code>. We then can resolve any conflicts and merge the PR into <code>main</code> where we end up with our final file (<code>A2</code>).</p>
 <pre class="ascii"><code>
@@ -352,8 +352,8 @@ Tip
 <p>Once you have resolved the conflict, you should commit-and-push your branch - it should now be ready for merging (subject to <a href="../day2/day2_code_review.html">review!</a>).</p>
 </section>
 </section>
-<section id="how-do-we-avoid-them-in-the-first-place" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="how-do-we-avoid-them-in-the-first-place"><span class="header-section-number">8.3</span> How do we avoid them in the first place?</h2>
+<section id="how-do-we-avoid-them-in-the-first-place" class="level2">
+<h2 class="anchored" data-anchor-id="how-do-we-avoid-them-in-the-first-place">How do we avoid them in the first place?</h2>
 <blockquote class="blockquote">
 <p>The best way to fix merge conflicts is to <em>not have merge conflicts</em>!</p>
 </blockquote>
@@ -393,8 +393,8 @@ Tip
 </blockquote>
 </section>
 </section>
-<section id="take-homes-on-merge-conflicts" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="take-homes-on-merge-conflicts"><span class="header-section-number">8.4</span> Take-homes on merge conflicts</h2>
+<section id="take-homes-on-merge-conflicts" class="level2">
+<h2 class="anchored" data-anchor-id="take-homes-on-merge-conflicts">Take-homes on merge conflicts</h2>
 <p>To solve merge conflicts: - Pull latest main - Merge main into your branch - Open conflicts in VSCode - Pick or combine changes - Delete conflict markers - Commit and push</p>
 <p>Remember: - Merge conflicts don’t mean something is <em>wrong</em> - just that Git needs you to make some choices on what is <em>right</em>. - Repeated and painful merge conflicts result from procedural issues, not a lack of Git skills! i.e. - branches are too long‑lived - PRs are too large - generated files are being committed - intent isn’t captured in Issues - Jupyter notebooks are being edited by multiple people</p>
 <ul>
@@ -812,8 +812,8 @@ Tip
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../day2/day2_wrapup.html" class="pagination-link" aria-label="Wrap up - 15 mins">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Wrap up - 15 mins</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../day2/day2_wrapup.html" class="pagination-link" aria-label="Wrap up">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Wrap up</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

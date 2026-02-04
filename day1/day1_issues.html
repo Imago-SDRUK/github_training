@@ -218,7 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../day2/day2_wrapup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Wrap up - 15 mins</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Wrap up</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -272,7 +272,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="why-issues-matter" class="level2">
 <h2 class="anchored" data-anchor-id="why-issues-matter">Why issues matter</h2>
-<p>Most important habit: <strong>use Issues</strong>.</p>
+<p>A very useful habit to get into: <strong>use Issues</strong>. Issues are the beginning of our GitHub workflow:</p>
+<blockquote class="blockquote">
+<p><strong>Issue</strong> -&gt; Branch -&gt; Commits -&gt; Pull Request -&gt; Review -&gt; Merge</p>
+</blockquote>
 <p>Issues are <strong>not just for bug reports</strong>. They are useful for:</p>
 <ul>
 <li>new features</li>
@@ -316,7 +319,11 @@ Note
 <h2 class="anchored" data-anchor-id="workflow">Workflow</h2>
 <ol type="1">
 <li>Encounter a problem or idea</li>
-<li>Create an Issue and write down:
+<li>Create an Issue:</li>
+</ol>
+<p><img src="../assets/day1/issue-1.png" class="img-fluid"></p>
+<ol start="3" type="1">
+<li>In your Issue, write down:
 <ul>
 <li>what the problem is</li>
 <li>ideas for how to approach it</li>
@@ -326,7 +333,7 @@ Note
 <li>update the Issue with what you try</li>
 <li>include things that didn’t work</li>
 </ul></li>
-<li>Set up a [pull request][day1_pull_requests.qmd] when the work is nearing completion.</li>
+<li>Set up a (pull request)[day1_pull_requests.qmd] when the work is nearing completion.</li>
 </ol>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -351,12 +358,15 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Issues don’t need to be verbose. Even <strong>one or two sentences of context</strong> can be immensely helpful. The Pareto principle applies: 20% extra effort = 80% of the benefit!</p>
+<p>Issues don’t need to be verbose. Even <strong>one or two sentences of context</strong> can be immensely helpful.</p>
+<p>Even creating an Issue that is just a title and a couple of sentences writes down the idea somewhere that is searchable and readable on demand.</p>
+<p>The Pareto principle applies: 20% extra effort = 80% of the benefit!</p>
 </div>
 </div>
 <hr>
 <section id="splitting-work-with-subissues" class="level3">
 <h3 class="anchored" data-anchor-id="splitting-work-with-subissues">Splitting work with sub‑issues</h3>
+<p>Issues should be used for both small pieces of work (squashing bugs) and more ambitious (whole-scale rewriting of a codebase, creating new data products).</p>
 <p>For large pieces of work (e.g.&nbsp;“design a whole new sub‑product”), create an Issue, but you can then also create <strong>sub-Issues</strong> to track particular bits of work, e.g.:</p>
 <ul>
 <li>What science questions need answering?</li>
@@ -366,9 +376,9 @@ Tip
 </section>
 <section id="linking-issues-to-code" class="level3">
 <h3 class="anchored" data-anchor-id="linking-issues-to-code">Linking Issues to code</h3>
-<p>Your Issue should <strong>reference the branch you are working on</strong>. This links two parts of our main workflow together:</p>
+<p>Your Issue should reference the <a href="../day1/day1_committing_changes.html">branch</a> you are working on once it is made. This links several parts of our main workflow together:</p>
 <blockquote class="blockquote">
-<p><strong>Issue</strong> -&gt; Branch -&gt; Commits -&gt; Pull Request -&gt; Review -&gt; Merge</p>
+<p><strong>Issue</strong> -&gt; <em>Branch</em> -&gt; <em>Commits</em> -&gt; Pull Request -&gt; Review -&gt; Merge</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -380,7 +390,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>GitHub will auto‑link Issues and PRs if:</p>
+<p>GitHub will auto‑link Issues and pull requests (PRs) if:</p>
 <p>the branch is created from the Issue or you mention #issue-number in commits or PR descriptions, e.g.&nbsp;typing</p>
 <p><code>closes #23</code></p>
 <p>will prompt a link to <code>#23</code>.</p>
@@ -389,8 +399,8 @@ Tip
 </section>
 <section id="use-labels" class="level3">
 <h3 class="anchored" data-anchor-id="use-labels">Use labels!</h3>
-<p>Labels let you give an easily viewable, high level description of what the thing is you’re trying to solve. For example, a <code>bug</code> label implies that your colleagues should probably take a look at your Issue, since it may affect their work. You can use the <code>good first issue</code> or <code>help wanted</code> labels to indicate that certain people should help out with your Issue, etc.</p>
-<p>TODO - image</p>
+<p>Labels let you give an easily viewable, high level overview of the type of thing you’re trying to solve. For example, a <code>bug</code> label implies that your colleagues should probably take a look at your Issue, since it may affect their work. You can use the <code>good first issue</code> or <code>help wanted</code> labels to indicate that certain people should help out with your Issue, etc.</p>
+<p><img src="../assets/day1/issue-labels.png" class="img-fluid"></p>
 </section>
 </section>
 <section id="example-issue" class="level2">
@@ -429,7 +439,7 @@ Tip
 <h4 class="anchored" data-anchor-id="comment-2-by-helpful_rseperson">Comment 2 (by <span class="citation" data-cites="helpful_rseperson">@helpful_rseperson</span>)</h4>
 <hr>
 <p>I think we can solve the memory issue using chunking. Rather than processing each tile sequentially in a loop, we can use <code>dask</code> <code>DataFrames</code> - these are read in lazily, so we break up each file into bits that can fit into memory.</p>
-<p>See (<link_to_docs>) for more info. I think if you replace:</link_to_docs></p>
+<p>See (link_to_docs) for more info. I think if you replace:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>python_code_with_loops<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>with</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>python_code_with_chunked_tasks<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -454,7 +464,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>🎥 <strong>Live demo idea</strong></p>
+<p>🎥 <strong>Live demo</strong></p>
 <p>Create: - a new Issue - from that Issue, create a branch</p>
 <p>Show how they stay linked automatically.</p>
 </div>
