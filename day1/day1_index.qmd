@@ -1,5 +1,6 @@
 ---
 title: "Day 1 — Issues, branches, forks and pull requests"
+number-sections: false
 ---
 
 This session focuses on **how work moves from an idea to production**.

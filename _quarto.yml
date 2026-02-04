@@ -42,5 +42,5 @@ format:
   html:
     theme: cosmo
     toc: true
-    toc-location: left   # 👈 move “On this page” to the left pane (below chapters)
+    toc-location: left  
     toc-depth: 2
