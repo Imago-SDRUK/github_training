@@ -17,7 +17,7 @@ For more complex formats (Jupyter notebooks, PDFs, other binaries), we may only 
 #### Why do merge conflicts occur? 
 
 ::: {callout.important}
- Merge conflicts don't mean you've done something wrong! They are a normal consequence of collaborative work. Don't Panic! 
+ Merge conflicts don't mean you've done something wrong! They are a normal consequence of collaborative work. Don't panic! 
 
 :::
 
