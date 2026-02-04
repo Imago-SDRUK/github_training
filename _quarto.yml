@@ -12,7 +12,7 @@ book:
     right: "This book was built with https://quarto.org/Quarto</a>."
   cover-image: assets/Imago-logo.png
   favicon: assets/Imago-logo.png
-  repo-url: https://github.com/JonElsey/github_training
+  repo-url: https://github.com/Imago-SDRUK/github_training
   repo-branch: main
   repo-actions: [edit, issue]
 
