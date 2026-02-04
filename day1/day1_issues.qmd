@@ -101,8 +101,8 @@ Your Issue should reference the [branch](day1_committing_changes.qmd) you are wo
 ::: {.callout-tip}
 GitHub will auto‑link Issues and pull requests (PRs) if:
 
-the branch is created from the Issue
-or you mention #issue-number in commits or PR descriptions, e.g. typing
+- the branch is created from the Issue
+- you mention #issue-number in commits or PR descriptions, e.g. typing
 
 `closes #23`
 
