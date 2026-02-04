@@ -20,20 +20,30 @@ git commit -m 'did some stuff`
 git push
 ```
 
-This is fine for individual work.
+This is fine for individual work. We don't necessarily need branches, since the work is "linear". 
+
+:::{.callout-tip}
+## What are `main`, branches and forks?
+
+Consider our GitHub repository like a tree. `main` represents the *trunk* of that tree - it is the central, *stable* point of focus for our project.
+
+*Branches* and *forks* are different ways to create a separate workspace where you can work in isolation from `main`.
+The idea is that once work on the branch is complete, it will be *merged* into `main`.
+
+- Branches are internal to the repository you are working on. They *branch out* from the *trunk*.
+- Forks are *entirely separate* separate copies of the repository. Often, someone will create a fork to copy a repository they like (but don't own) and work on it separately or implement a feature/fix. 
+This work can be merged back into the original repository if desired.
+
+  - Sometimes, a fork can spin out into its own thing entirely - e.g. [LibreOffice](https://www.libreoffice.org/) was originally a fork of [OpenOffice](https://www.openoffice.org/).
+
+:::
 
 > The question is - how to implement our ideas when we're working as a *team*? 
-
-## What `main` should represent
-
-Think of `main` as the latest **stable** working version of your project. 
-
-If lots of people independently commit to `main`, it is much less likely to be stable. 
 
 ### When to commit to the `main` branch
 
 Direct commits to main are fine for work that only you use.
-For team work: don’t.
+For team work: generally don’t. If lots of people independently commit to `main`, it is much less likely to be stable. 
 
 ---
 
@@ -64,7 +74,7 @@ For these reasons, many projects explcitly prohibit people from being able to pu
 3. Open a **pull request**
 4. Merge into `main` once reviewed
 
-:::{.callout-tip}
+
 ### Doesn't this use valuable time that I could spend coding/writing?
 
 This workflow might take longer than the simple `git add/git commit` workflow from above.
@@ -72,7 +82,6 @@ This workflow might take longer than the simple `git add/git commit` workflow fr
 However, if *one person* messes up a commit, it inhibits the work of *everyone* to go back and untangle it; a job which is made harder since you are likely the 
 only person with any information on what occurred and why. This is significantly mitigated with a branch -> PR workflow. 
 
-:::
 
 ---
 

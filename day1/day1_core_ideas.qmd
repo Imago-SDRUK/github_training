@@ -26,10 +26,15 @@ Plenty of training already exists on what `git` commands do - [The Carpentries](
 This session focuses more on:
 
 - *how to structure your work so that it is easier to manage when working as a team*
-- *how and when to use GitHub's features to help with this structure*
+- using GitHub's features as a framework for this structure*
 - *how workflow choices can cause technical issues later on!*
 
 You may be familiar with *Issues*, *branches* and *pull requests* already. These are the primary building blocks of a good collaborative workflow.
+
+## A caveat
+
+*There are many many different ideas, frameworks and philosophies on what workflows work best*. 
+My aim here is to provide a **good enough** set of guidelines to follow for our work, simplifying as much as possible to reflect the diverse range of experience within our team.
 
 ## Fundamental workflow
 
@@ -40,13 +45,13 @@ Most work should follow this pattern:
 Each step serves a purpose:
 
 - **Issue**: capture intent and context, agree on what should be done 
-- **Branch**: isolate work so it doesn't affect others work
+- **Branch**: isolate work so it doesn't affect other work
 - **PR**: invite discussion and review
 - **Review**: improve quality and share understanding
 - **Merge**: integrate into stable code, make discoverable 
 - **Close**: record what was done
 
-Following this workflow consistently will save us all time. This might look a bit like bureaucracy, but I think of it more as *communication*. 
+Following this workflow consistently will save us all time. This might look a bit like bureaucracy, but I think of it more as *structure*. 
 
 Day 1 will cover the *conceptualisation* and *implementation* parts of this pattern - [Issues](day1_issues.qmd), [Branches](day1_committing_changes.qmd) and [Pull Requests](day1_pull_requests.qmd).
 
@@ -74,7 +79,6 @@ For those projects, you can rely solely on your own documentation or notes. Idea
 
 For team projects - progress is bottlenecked by how well we can work with one another. 
 If a 5 member team all have different documentation/working practices, sharing ideas and working together becomes much more complex as we need to reconcile all of these ways of working first.
-
 
 ### Communication is key 
 

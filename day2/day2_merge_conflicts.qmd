@@ -32,7 +32,7 @@ Conflicts happen when two branches change the same part of the same file differe
 
 - But when it is B2's turn, the file they are working on may look *very* different to the one they were working on before - they were working off of A0, not A1!
 
-```ascii
+```yaml
 
 branch B1:       - B1 -
                /        \ 
@@ -51,7 +51,7 @@ If both changed the same part, Git asks you to *choose*.
 
 In the updated diagram below, we merge `main` into `B2` and end up with a new updated file `BA2`. We then can resolve any conflicts and merge the PR into `main` where we end up with our final file (`A2`).
 
-```ascii
+```yaml
 
 branch B1:       - B1 -
                /        \ 
@@ -123,8 +123,6 @@ Once you have resolved the conflict, you should commit-and-push your branch - it
 
 ## How do we avoid them in the first place?
 
-> The best way to fix merge conflicts is to *not have merge conflicts*!
-
 Everything from Session 1 helps; good documentation, small PRs, and short-lived branches.
 
 - The longer a branch lives, the more it will diverge from `main`
@@ -133,6 +131,7 @@ Everything from Session 1 helps; good documentation, small PRs, and short-lived 
 
 - Use Issues to track what is being worked on! This way, someone can see that you are working on a file, and see any changes coming. 
 - Keep repositories clean of unnecessary files - like non-critical data, plots, VSCode environment data, etc. Use `.gitignore` for these.
+- *Communicate with your team* - if your work doesn't overlap, then merge conflicts don't happen.  
 
 #### I've followed all your advice and I'm still getting merge conflicts! What do I do? 
 
