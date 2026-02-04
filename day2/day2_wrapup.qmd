@@ -45,4 +45,12 @@ Prevention is better than cure however!
 - Perfect is the enemy of merged.
 - Use your team - ask for help on both technical and conceptual problems! 
 
+## Some example Issues and PRs:
+
+https://github.com/Imago-SDRUK/Imago-web/issues/95 - using Issues to flag things that we want from our products 
+https://github.com/Imago-SDRUK/Imago/issues/21 - example of an Issue for a long-term piece of work to be worked on later
+https://github.com/Imago-SDRUK/Imago/pull/13 - example of a decent-sized PR with code review
+
+
+
 ---

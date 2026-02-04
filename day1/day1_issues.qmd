@@ -28,6 +28,9 @@ They do not need to be formal documentation — but they *should* be a bit more 
 Think of Issues as creating a *shared memory* for the project. If your idea stays private, it may be forgotten or half-implemented. 
 Turning that into an Issue gives the team a permanent record of that idea that they can look at at any time, iterate with you on or even try and implement themselves. 
 
+We do have other resources to share ideas (Teams, weekly meetings). 
+The advantage of using GitHub is that Issues are more searchable and findable than e.g. threads on Teams, and 
+less likely to be forgotten about and more likely to be discussed compared to individual meeting notes. 
 :::
 
 ---

@@ -66,7 +66,7 @@ Your title should refer to *the* thing that you are aiming to add with your PR -
 
 ### Use labels
 
-TODO - image here
+![](../assets/day1/PR-labels.png)
 
 Labels are a useful way to categorise whatever problem it is you are working on. 
 For example, a PR with the `bug` keyword might be a high priority for a team member to look at and therefore contribute to, 

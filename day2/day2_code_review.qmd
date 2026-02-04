@@ -15,7 +15,7 @@ Pick a colleague who is:
 
 You should use the buttons to assign them to be a reviewer - this is not a faux pas, but a useful way to draw someone's attention to some work they're probably interested in. 
 
-TODO - image/choose_reviewer
+![](../assets/day2/day2_choose_reviewer.png)
 
 ### Being a reviewer
 
@@ -94,7 +94,7 @@ Before merging:
 	- If your reviewer marked anything as a blocker, fix it before merging.
 
 - Check that your branch is up‑to‑date with main. If GitHub says “This branch is out‑of‑date”, click Update branch
-or merge main into your branch locally).
+(or merge main into your branch locally).
 	- This will flag whether we have any [merge conflicts](day2_merge_conflicts.qmd).
 - Resolve any merge conflicts that do arise! 
 
