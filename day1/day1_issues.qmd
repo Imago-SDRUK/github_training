@@ -7,7 +7,9 @@ number-sections: false
 
 ## Why issues matter
 
-Most important habit: **use Issues**.
+A very useful habit to get into: **use Issues**. Issues are the beginning of our GitHub workflow:
+
+> **Issue** -> Branch -> Commits -> Pull Request -> Review -> Merge
 
 Issues are **not just for bug reports**. They are useful for:
 
@@ -49,13 +51,17 @@ If you notice a problem, think of an improvement, have an idea you *don’t yet 
 ## Workflow 
 
 1. Encounter a problem or idea
-2. Create an Issue and write down:
+2. Create an Issue:
+
+![](../assets/day1/issue-1.png)
+
+3. In your Issue, write down:
    - what the problem is
    - ideas for how to approach it
 3. Start work on the idea
 	- update the Issue with what you try
 	- include things that didn’t work
-4. Set up a [pull request][day1_pull_requests.qmd] when the work is nearing completion.
+4. Set up a (pull request)[day1_pull_requests.qmd] when the work is nearing completion.
 
 
 ::: {.callout-important}
@@ -63,13 +69,19 @@ Please do include failed approaches — they save reviewers from re‑suggesting
 :::
 
 ::: {.callout-tip}
-Issues don’t need to be verbose. Even **one or two sentences of context** can be immensely helpful. The Pareto principle applies: 20% extra effort = 80% of the benefit!
+Issues don’t need to be verbose. Even **one or two sentences of context** can be immensely helpful. 
+
+Even creating an Issue that is just a title and a couple of sentences writes down the idea somewhere that is searchable and readable on demand.
+
+The Pareto principle applies: 20% extra effort = 80% of the benefit!
 
 :::
 
 ---
 
 ### Splitting work with sub‑issues
+
+Issues should be used for both small pieces of work (squashing bugs) and more ambitious (whole-scale rewriting of a codebase, creating new data products).
 
 For large pieces of work (e.g. “design a whole new sub‑product”), create an Issue, but you can then also create **sub-Issues** to track particular bits of work, e.g.:
 
@@ -79,12 +91,12 @@ For large pieces of work (e.g. “design a whole new sub‑product”), create a
 
 ### Linking Issues to code
 
-Your Issue should **reference the branch you are working on**. This links two parts of our main workflow together:
+Your Issue should reference the [branch](day1_committing_changes.qmd) you are working on once it is made. This links several parts of our main workflow together:
 
-> **Issue** -> Branch -> Commits -> Pull Request -> Review -> Merge
+> **Issue** -> *Branch* -> *Commits* -> Pull Request -> Review -> Merge
 
 ::: {.callout-tip}
-GitHub will auto‑link Issues and PRs if:
+GitHub will auto‑link Issues and pull requests (PRs) if:
 
 the branch is created from the Issue
 or you mention #issue-number in commits or PR descriptions, e.g. typing
@@ -97,10 +109,10 @@ will prompt a link to `#23`.
 
 ### Use labels! 
 
-Labels let you give an easily viewable, high level description of what the thing is you're trying to solve. For example, a `bug` label implies that your colleagues should probably take a look at your Issue, since it may affect their work. 
+Labels let you give an easily viewable, high level overview of the type of thing you're trying to solve. For example, a `bug` label implies that your colleagues should probably take a look at your Issue, since it may affect their work. 
 You can use the `good first issue` or `help wanted` labels to indicate that certain people should help out with your Issue, etc.
 
-TODO - image
+![](../assets/day1/issue-labels.png)
 
 ## Example Issue 
 
@@ -147,7 +159,7 @@ Next step is that memory issue... any ideas @helpful_rseperson?
 
 I think we can solve the memory issue using chunking. Rather than processing each tile sequentially in a loop, we can use `dask` `DataFrames` - these are read in lazily, so we break up each file into bits that can fit into memory.
 
-See (<link_to_docs>) for more info. I think if you replace:
+See (link_to_docs) for more info. I think if you replace:
 
 ```python
 <python_code_with_loops>
@@ -172,7 +184,7 @@ Using them will make managing work within the data products more collaborative, 
 ## Live demo
 
 ::: {.callout-tip}
-🎥 **Live demo idea**
+🎥 **Live demo**
 
 Create:
 - a new Issue

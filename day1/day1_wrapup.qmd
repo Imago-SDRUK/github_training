@@ -3,8 +3,6 @@ title: "Day 1 wrap up"
 number-sections: false
 ---
 
-## Day 1 wrap‑up 
-
 - Issues capture *intent and context*
 - Branches isolate work
 - Pull requests connect work back to the team

@@ -1,6 +1,7 @@
 
 ---
 title: "Resolving merge conflicts"
+number-sections: false
 ---
 
 ## What is a merge conflict?

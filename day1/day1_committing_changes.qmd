@@ -49,7 +49,7 @@ This causes several problems:
 
 #### Committing directly to `main` also makes merge conflicts *way* more likely! 
 
-We will learn more about these on [day 2.](../day2/day2_merge_conflicts.qmd). Merge conflicts happen when two people change the same part of the code in different ways. 
+We will learn more about these on [day 2](../day2/day2_merge_conflicts.qmd). Merge conflicts happen when two people change the same part of the code in different ways. 
 Using [pull requests](day1_pull_requests.qmd) we can control this; with commits to `main` we cannot. 
 
 For these reasons, many projects explcitly prohibit people from being able to push directly to `main`. 
@@ -166,11 +166,17 @@ It is not clear what is being done here. You'll look back on this in a week and 
 
 This last bit is not empty by mistake - it is to illustrate that a *messy Git history is better than no Git history at all.* 
 
-## How often should I push my branch?
+## How often should I `commit`/`push` my branch?
 
 > More often than we probably do.
 
-If the work only exists on your laptop, it might as well not exist at all as far as your colleagues are concerned!
+If the work only exists on your laptop, it might as well not exist at all as far as your colleagues are concerned! 
+
+There's not a hard-and-fast rule for how often you should `commit` - a rule of thumb I use is "is my work a) stable, and b) would I be unhappy if I lost the work I had done?".
+
+There's no penalty for having lots of commits! This can make it easier to break up what you have done into small chunks. This also makes writing useful commit messages easier! 
+
+You don't need to `push` every time you commit, but doing so a few times a day is probably a good idea.
 
 ::: {.callout-tip}
 **Don't be afraid!**

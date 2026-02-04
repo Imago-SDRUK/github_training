@@ -1,5 +1,6 @@
 ---
-title: 'Wrap up - 15 mins'
+title: 'Wrap up'
+number-sections: false
 ---
 
 ## Specific Tips

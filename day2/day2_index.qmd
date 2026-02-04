@@ -1,5 +1,6 @@
 ---
 title: "Day 2 - Code review, merge conflicts and standard workflows"
+number-sections: false
 ---
  
 This session focuses on **how we merge code into the `main` branch**.
