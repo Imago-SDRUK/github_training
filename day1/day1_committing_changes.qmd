@@ -1,5 +1,5 @@
 ---
-title: "Committing your work – 15 mins"
+title: "Committing your work"
 subtitle: "Commits, branches and forks"
 number-sections: false
 ---

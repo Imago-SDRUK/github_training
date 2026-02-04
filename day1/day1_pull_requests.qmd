@@ -1,5 +1,5 @@
 ---
-title: "Pull Requests - 15 minutes"
+title: "Pull Requests"
 subtitle: "Turning work into shared, reviewable progress"
 number-sections: false
 ---

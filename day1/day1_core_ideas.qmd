@@ -1,5 +1,5 @@
 ---
-title: "Core concepts – 10 mins"
+title: "Core concepts"
 subtitle: "What we should be doing and why"
 number-sections: false
 ---

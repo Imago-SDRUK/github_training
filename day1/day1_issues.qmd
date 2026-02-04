@@ -1,5 +1,5 @@
 ---
-title: "Issues - 20 mins"
+title: "Issues"
 subtitle: "Planning work, capturing intent, and making collaboration easier"
 number-sections: false
 ---
