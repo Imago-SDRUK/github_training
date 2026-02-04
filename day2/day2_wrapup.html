@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -202,7 +237,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul class="collapse">
   <li><a href="#specific-tips" id="toc-specific-tips" class="nav-link active" data-scroll-target="#specific-tips">Specific Tips</a></li>
-  <li><a href="#other-thoughts" id="toc-other-thoughts" class="nav-link" data-scroll-target="#other-thoughts">Other thoughts</a></li>
+  <li><a href="#heuristics" id="toc-heuristics" class="nav-link" data-scroll-target="#heuristics">Heuristics</a></li>
   <li><a href="#some-example-issues-and-prs" id="toc-some-example-issues-and-prs" class="nav-link" data-scroll-target="#some-example-issues-and-prs">Some example Issues and PRs:</a></li>
   </ul>
 <div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/Imago-SDRUK/github_training/edit/main/day2/day2_wrapup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Imago-SDRUK/github_training/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -238,17 +273,77 @@ ul.task-list li input[type="checkbox"] {
 <p>This section goes through some of the specific questions that members of the Imago team had before putting together this workshop.</p>
 <section id="dealing-with-jupyter-notebooks" class="level3">
 <h3 class="anchored" data-anchor-id="dealing-with-jupyter-notebooks">Dealing with Jupyter notebooks</h3>
+<p>This was covered a fair bit in [day2_merge_conflicts.qmd]. The best way is to:</p>
+<ul>
+<li>clear outputs</li>
+<li>don’t work on the same cells as your colleagues</li>
+<li>don’t use Jupyter notebooks for production code - use them for their intended purpose (training, demos)</li>
+<li>fixing them manually and overwriting the old file is often easier than trying to diff the JSON</li>
+</ul>
 <p>There are tools for helping with Jupyter notebooks - e.g.&nbsp;one could use GitHub Actions to run <code>nbconvert</code> to clear outputs, <a href="https://github.com/jupyter/nbdime"><code>nbdime</code></a> can make merging easier. Prevention is better than cure however!</p>
 </section>
 <section id="creating-a-chapter-in-quarto" class="level3">
 <h3 class="anchored" data-anchor-id="creating-a-chapter-in-quarto">Creating a chapter in Quarto</h3>
+<p>The <a href="https://github.com/Imago-SDRUK/github_training">repository used to create this webpage</a> is an example of this.</p>
+<p>The key points are:</p>
+<ul>
+<li>Create directories for the different chapters</li>
+<li>Upload the content in those chapters. e.g.&nbsp;</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="at">my-quarto-book/</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">├── quarto.yml</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">├── index.qmd</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">├── chapter1/</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">│   └── chapter1_content1.qmd</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">│   └── chapter1_content2.qmd</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">│   └── chapter1_index.qmd</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">├── chapter2/</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">│   └── chapter2_content.qmd</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">│   └── chapter2_index.qmd</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">├── chapter3/</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">│   └── chapter3_content.qmd</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">│   └── chapter2_index.qmd</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">│   └──assets/</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">│      └──picture_1.png</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Here we have <code>assets</code> (for e.g.&nbsp;images) inside the chapters rather than one big <code>assets</code> folder at the top level.</p>
+<ul>
+<li>Update quarto.yml under the <code>book</code> section to include your chapters.
+<ul>
+<li>Then, if each chapter has several files (as in the case above - we have <code>content1</code> and <code>content2</code>), we can nest them by creating new <code>index.qmd</code> for each chapter</li>
+</ul></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chapters</span><span class="kw">:</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> index.qmd</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">part</span><span class="kw">:</span><span class="at"> chapter1/chapter1_index.qmd</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">chapters</span><span class="kw">:</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="kw">-</span><span class="at"> chapter1/chapter1_content1.qmd </span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="kw">-</span><span class="at"> chapter1/chapter1_content2.qmd</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">part</span><span class="kw">:</span><span class="at"> chapter2/chapter2_index.qmd</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">chapters</span><span class="kw">:</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="kw">-</span><span class="at"> chapter2/chapter2_content.qmd</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">part</span><span class="kw">:</span><span class="at"> chapter3/chapter3_index.qmd </span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">chapters</span><span class="kw">:</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="kw">-</span><span class="at"> chapter3/chapter3_content.qmd</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="at">      </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Use relative links to link chapters together
+<ul>
+<li>e.g.&nbsp;from <code>chapter3_content.qmd</code>, you can link to <code>chapter2_content.qmd</code> like <code>(link text)[../chapter2/chapter2_content.qmd]</code>.</li>
+</ul></li>
+</ul>
+<p>Have a look in the workshop repo if you want an example of this in action! It has an example of a GH Actions workflow (in <code>.github/workflows/build_quarto.yml</code>) to automatically publish and update the site whenever a commit or PR is made into <code>main</code> - coming to a future workshop near you…</p>
 </section>
 <section id="how-to-cite-effectively" class="level3">
 <h3 class="anchored" data-anchor-id="how-to-cite-effectively">How to cite effectively?</h3>
+<p>There are various ways. You can cite the GitHub repository itself if you don’t have a data description paper. The best bet is to use something similar to <a href="https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content">Zenodo</a>. The main consideration is that you need your repository to be <strong>public</strong> - but this should be the case anyway if you’re citing it! You can also add a <a href="https://gist.github.com/seignovert/ae6771f400ca464d294261f42900823a">neat little badge</a> to your <code>README.md</code> to link to the Zenodo page!</p>
+<p>For stuff that’s more like tooling or methods, we could consider a submission to the <a href="https://joss.theoj.org/"><em>Journal of Open Source Software</em></a>. This differs from a normal journal in that papers are usually ~2 pages long, and focus more on the software than the application. Writing them is intended to be much simpler than a normal paper - the hard work is in developing the software itself!</p>
 </section>
-</section>
-<section id="other-thoughts" class="level2">
-<h2 class="anchored" data-anchor-id="other-thoughts">Other thoughts</h2>
+<section id="idle-thoughts" class="level3">
+<h3 class="anchored" data-anchor-id="idle-thoughts">Idle thoughts</h3>
 <ul>
 <li><p>Don’t worry about perfection straight away. Issues are where all your messy ideas can live. Worry about polish just before you’re ready to merge it in - remember <code>main</code> is where things need to be polished.</p></li>
 <li><p>Documentation is key! You’re more likely to waste time/be stressed/want to quit academia when you can’t remember how and why you did anything down the line (and neither can your colleagues) writing a paper than you will spending 10 minutes a day/week writing documentation and populating Issues.</p></li>
@@ -256,7 +351,6 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Software developers spend as much as possible trying to minimise the amount of work needing to be done so take heed their advice!</li>
 </ul></li>
-<li><p>Aside from “don’t commit to main” - these are all <em>guidelines</em>. Don’t worry if you don’t match them exactly!</p></li>
 <li><p>If a PR is hard to review, it is probably too big - in which case it is better to split across multiple issues/PRs.</p>
 <ul>
 <li>Not a particularly good heuristic for how big one should be - just make it as big as it needs to be but no bigger. The more moving parts there are the time it takes to review scales non-linearly!</li>
@@ -268,19 +362,20 @@ ul.task-list li input[type="checkbox"] {
 <li><p>If you have questions or problems - reach out to the RSEs directly! Email, or there is an RSE page on Teams.</p></li>
 <li><p><strong><em>Don’t worry if you don’t follow all of the guidelines all of the time</em></strong>! The intent is to improve the way we work, not to enforce orthodoxy for its own sake.</p></li>
 </ul>
-<section id="heuristics" class="level4">
-<h4 class="anchored" data-anchor-id="heuristics">Heuristics</h4>
+</section>
+</section>
+<section id="heuristics" class="level2">
+<h2 class="anchored" data-anchor-id="heuristics">Heuristics</h2>
 <ul>
 <li>If you are doing work on something, it should have an Issue.</li>
 <li><code>main</code> is a record, not a workspace</li>
 <li>Document your work in Issues, PR when ready, link to the Issue.</li>
-<li>If a PR is hard to review, it’s too big.</li>
+<li>If a PR is hard to review, it’s too big - make the next one smaller!</li>
 <li>Review intent before implementation.</li>
-<li>Suggestions not blockers.</li>
+<li>Non-critical changes should be suggestions not blockers.</li>
 <li>Perfect is the enemy of merged.</li>
 <li>Use your team - ask for help on both technical and conceptual problems!</li>
 </ul>
-</section>
 </section>
 <section id="some-example-issues-and-prs" class="level2">
 <h2 class="anchored" data-anchor-id="some-example-issues-and-prs">Some example Issues and PRs:</h2>
