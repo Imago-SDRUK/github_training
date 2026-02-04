@@ -1,0 +1,188 @@
+---
+title: Committing your work – 15 mins
+subtitle: "Commits, branches and forks"
+
+---
+
+## You are here:
+
+> Issue -> **Branch** -> Pull Request -> Review -> Merge -> Close
+
+
+## From Issues to lines of code
+
+Once we've fleshed out our ideas, the next step is implementing them into the codebase. e.g.:
+
+```bash
+git checkout main
+git add <files>
+git commit -m 'did some stuff`
+git push
+```
+
+This is fine for individual work.
+
+> The question is - how to implement our ideas when we're working as a *team*? 
+
+## What `main` should represent
+
+Think of `main` as the latest **stable** working version of your project. 
+
+If lots of people independently commit to `main`, it is much less likely to be stable. 
+
+### When to commit to the `main` branch
+
+Direct commits to main are fine for work that only you use.
+For team work: don’t.
+
+---
+
+### Why committing to `main` is a problem in team projects
+
+In a team‑based project, committing directly to `main` means that the team loses sight of what is being put in the main branch.
+
+This causes several problems:
+
+- loss of visibility into *what* changed and *why*
+- no opportunity for teammates to question assumptions, or suggest improvements
+- no shared understanding of how the codebase evolved
+
+#### Committing directly to `main` also makes merge conflicts *way* more likely! 
+
+We will learn more about these on [day 2.](../day2/day2_merge_conflicts.qmd). Merge conflicts happen when two people change the same part of the code in different ways. 
+Using [pull requests](day1_pull_requests.qmd) we can control this; with commits to `main` we cannot. 
+
+For these reasons, many projects explcitly prohibit people from being able to push directly to `main`. 
+
+---
+
+
+### [You mean there's a better way?](https://www.youtube.com/watch?v=kDiSWKaS3N0)
+
+1. Create a **branch** (or fork). This is often referred to as a *feature branch*.
+2. Make your changes there
+3. Open a **pull request**
+4. Merge into `main` once reviewed
+
+:::{.callout-tip}
+### Doesn't this use valuable time that I could spend coding/writing?
+
+This workflow might take longer than the simple `git add/git commit` workflow from above.
+
+However, if *one person* messes up a commit, it inhibits the work of *everyone* to go back and untangle it; a job which is made harder since you are likely the 
+only person with any information on what occurred and why. This is significantly mitigated with a branch -> PR workflow. 
+
+:::
+
+---
+
+## Forks vs branches
+
+- For work **within Imago/other team repositories**: use **branches**
+- For work **on projects you don’t own**: use **forks**
+
+---
+
+Branches live *inside* the main repository, and are visible to the team.
+Forks sit outside the repo and hide your work unless people know where to look. So when working as a team, it is better to use branches over forks.
+
+---
+
+## Branch naming matters
+
+Give your branches **descriptive names**. A branch name should convey the *highest‑level intent* of the work. A bad example might be:
+
+- `je_test1`
+
+Better examples:
+
+- `aggregation_to_lsoa`
+- `fix_missing_metadata`
+- `add_uncertainty_outputs`
+
+---
+
+### Basing branch names on Issues
+
+If you have an Issue, you can use it as the basis for the branch name, e.g.:
+
+- Issue #23: *Add support for seasonal data processing*
+- Branch name:
+  - `23-seasonal_processing`
+
+This makes it immediately obvious why the branch exists, what it relates to, and how it fits into the broader workflow.
+
+:::{.callout-tip}
+
+GitHub defaults to a naming convention like this. If you create an Issue, there is a prompt to create a branch.
+Clicking this box will give you the option to make a branch - the default name being that of the Issue and its number.
+
+![](../assets/day1/issue-branch-name.png)
+
+:::
+---
+
+## Commit messages
+
+The same principle applies to commit messages; it works better if there is a convention for how we write them.
+
+One example is to use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/), or a similar style.
+
+### Why commit history matters:
+
+#### The Good: (Conventional Commits)
+
+```
+commit b291vav  feat: added calculation of yearly PM2.5 
+commit f103ab2  fix: load in pm2.5 rather than pm10 concentration in `pm2.5_aggregation`
+commit e9a41c0  fix: correctly use weighted mean rather than mean-of-means in `pm2.5_aggregation`
+commit 8b21aa4  fix: remove accidentally-added quotation mark in `pm2.5_aggregation` causing SyntaxError
+commit 7c04dd1  feat: added visualisation routines for demonstration at summit 
+commit 6df3a22  fix: corrected colour scale in `visualisation.py`
+```
+
+This clearly communicates what you've been doing. A history like this makes is very clear how your code evolved and why changes were made. 
+
+#### The Bad:
+
+```
+commit b291vav  work done while on train 
+commit f103ab2  fix
+commit e9a41c0  fix again
+commit 8b21aa4  oops
+commit 7c04dd1  final
+commit 6df3a22  final_final
+```
+
+Each of these changes corresponds to the "Good" changes above. 
+It is not clear what is being done here. You'll look back on this in a week and think *"what was I trying to fix?"* *"Why did I have to change the final version again?"*
+
+#### The Ugly:
+
+```
+...
+```
+
+This last bit is not empty by mistake - it is to illustrate that a *messy Git history is better than no Git history at all.* 
+
+## How often should I push my branch?
+
+> More often than we probably do.
+
+If the work only exists on your laptop, it might as well not exist at all as far as your colleagues are concerned!
+
+::: {.callout-tip}
+**Don't be afraid!**
+
+People sometimes avoid committing or PRing their work because they are unsure about it.
+That doesn't matter! We want to build a culture of *collaboration*, not *blame*. If something isn't ready, that's fine; your colleagues can help you make it so.
+
+:::
+
+---
+## Key takeaways
+
+- Treat `main` as stable, potentially external-facing code
+- Do not commit directly to `main` for team projects
+- Use branches for internal collaboration, and give them clear names
+- Commit and push often

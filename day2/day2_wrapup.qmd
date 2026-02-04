@@ -1,0 +1,45 @@
+
+
+## Wrap up and Q&A - 15 mins 
+
+### Specific Tips
+
+This section goes through some of the specific questions that members of the Imago team had before putting together this workshop.
+
+### Dealing with Jupyter notebooks
+
+There are tools for helping with Jupyter notebooks - e.g. one could use GitHub Actions to run `nbconvert` to clear outputs, [`nbdime`](https://github.com/jupyter/nbdime) can make merging easier. 
+Prevention is better than cure however! 
+
+### Creating a chapter in Quarto
+
+### How to cite effectively?
+
+#### Other thoughts
+
+- Don't worry about perfection straight away. Issues are where all your messy ideas can live. Worry about polish just before you're ready to merge it in - remember `main` is where things need to be polished. 
+- Documentation is key! You're more likely to waste time/be stressed/want to quit academia when you can't remember how and why you did anything down the line (and neither can your colleagues) writing a paper than you will spending 10 minutes a day/week writing documentation and populating Issues. 
+- These might seem like restrictive or time-consuming behaviours, but they are standard practice for software developers *for a reason* - because they work.
+	- Software developers spend as much as possible trying to minimise the amount of work needing to be done so take heed their advice!
+- Aside from "don't commit to main" - these are all *guidelines*. Don't worry if you don't match them exactly! 
+
+- If a PR is hard to review, it is probably too big - in which case it is better to split across multiple issues/PRs.
+	- Not a particularly good heuristic for how big one should be - just make it as big as it needs to be but no bigger. The more moving parts there are the time it takes to review scales non-linearly! 
+	
+- Sharing code/putting it out for review, particularly as an academic rather than a software developer can seem daunting! But remember that these processes are there to make things better for everyone - this lets us all combine our strengths and learn things from one another.
+	- Feel free to request an RSE reviewer as well as an academic colleague - even if we don't have time the worst we can do is say "no sorry"! 
+
+- If you have questions or problems - reach out to the RSEs directly! Email, or there is an RSE page on Teams. 
+
+- ***Don't worry if you don't follow all of the guidelines all of the time***! The intent is to improve the way we work, not to enforce orthodoxy for its own sake. 
+
+#### Heuristics 
+
+- If you are doing work on something, it should have an Issue.
+- `main` is a record, not a workspace
+- Document your work in Issues, PR when ready, link to the Issue. 
+- If a PR is hard to review, it’s too big.
+- Review intent before implementation.
+- Suggestions not blockers.
+- Perfect is the enemy of merged.
+- Use your team - ask for help on both technical and conceptual problems! 

@@ -1,0 +1,16 @@
+---
+title: "Day 2 - Code review, merge conflicts and standard workflows"
+---
+ 
+This session focuses on **how we merge code into the `main` branch**.
+
+Topics:
+- Code review - and why it is useful
+- How to avoid merge conflicts in the first place
+- How to deal with the merge conflicts that do arise 
+- Tips and tricks 
+- Standard operating procedure (SOP)
+- Q&A
+
+These topics were not covered in the first GitHub workshop run by Batool - here I will introduce them and give some guidance on what to do if you 
+are asked to review code or encounter merge conflicts. 

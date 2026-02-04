@@ -1,0 +1,118 @@
+---
+title: Core concepts – 10 mins
+subtitle: What we should be doing and why 
+---
+
+
+## What this training is about
+
+This session is about **how to use GitHub effectively as a team**. 
+
+The main aim here is to demystify core concepts and give you a set of good (enough) practices for using GitHub.
+
+## Focus: behaviours over buttons
+
+This training is primarily about **working patterns**, not specific commands or buttons.
+
+- This training is agnostic to whether you use:
+  - the command line
+  - GitHub Desktop
+  - VS Code
+  - other GUIs
+
+Plenty of training already exists on what `git` commands do - [The Carpentries](https://swcarpentry.github.io/git-novice/) have some amazing courses on this and other topics. 
+
+This session focuses more on:
+
+- *how to structure your work so that it is easier to manage when working as a team*
+- *how and when to use GitHub's features to help with this structure*
+- *how workflow choices can cause technical issues later on!*
+
+You may be familiar with *Issues*, *branches* and *pull requests* already. These are the primary building blocks of a good collaborative workflow.
+
+## Fundamental workflow
+
+Most work should follow this pattern:
+
+> Issue -> Branch -> Pull Request -> Review -> Merge -> Close
+
+Each step serves a purpose:
+
+- **Issue**: capture intent and context, agree on what should be done 
+- **Branch**: isolate work so it doesn't affect others work
+- **PR**: invite discussion and review
+- **Review**: improve quality and share understanding
+- **Merge**: integrate into stable code, make discoverable 
+- **Close**: record what was done
+
+Following this workflow consistently will save us all time. This might look a bit like bureaucracy, but I think of it more as *communication*. 
+
+Day 1 will cover the *conceptualisation* and *implementation* parts of this pattern - [Issues](day1_issues.qmd), [Branches](day1_committing_changes.qmd) and [Pull Requests](day1_pull_requests.qmd).
+
+Day 2 will cover the *merging* part of the pattern - [Code Review](../day2/day2_code_review.qmd) and [Merge Conflicts](../day2/day2_merge_conflicts.qmd). 
+
+## GitHub is for teamwork
+
+GitHub exists to support **working together**. The main selling points of GitHub are that you can:
+
+- Make work and decision-making visible and *traceable* 
+- Make changes *reviewable*, so that our colleagues can understand them and work with them more effectively
+- Make changes *reversible* if something goes wrong!
+
+:::{.callout-tip}
+*GitHub is not just a tool for storing code!* 
+
+It is a **collaboration** and **project management** platform. Using it is 
+about more than just pushing and pulling code - using it *effectively* means embracing new ways of working. 
+:::
+
+### This is different from using Git and GitHub individually!
+
+For your own individual projects, a lot of this stuff may not be necessary (although much of it is still good practice!). 
+For those projects, you can rely solely on your own documentation or notes. Ideas can live inside your head with no problems since you are the only one implementing them.
+
+For team projects - progress is bottlenecked by how well we can work with one another. 
+If a 5 member team all have different documentation/working practices, sharing ideas and working together becomes much more complex as we need to reconcile all of these ways of working first.
+
+
+### Communication is key 
+
+The main principle here is *communication*. By better documenting our ideas, we can reduce ambiguity, make decisions (both big and small!) visible and collaborative, 
+invite feedback on ideas and implementation, and ensure we have an evolving, living, *shared* history of our products.
+
+This lets us communicate: 
+
+- what we did
+- why we did it
+- what alternatives were considered
+- what worked (and what didn’t)
+
+The technical issues (e.g. merge conflicts, issues with Quarto) that were flagged by the PDRAs are all traceable to workflow issues! Rather than fix the *symptom*, I aim to remedy the *cause*.
+
+:::{.callout-tip}
+
+Communication is easier when we break things down! A recurring theme throughout the workshop will be splitting large, 
+complex pieces of work into smaller, digestible chunks. This lets us communicate and develop our core ideas with less noise,
+makes writing Issues, pull requests and code reviews much easier, and minimises the likelihood of merge conflicts occurring.
+
+:::
+
+### Buy-in is required...
+
+GitHub only helps us if we **use the tools it provides**.
+
+That does come with some initial overhead - learning the workflow, changing habits and getting used to documenting your work as you go. 
+The sooner we start learning them the better! 
+
+### ... but this is not a list of rules
+
+These guidelines are intended to be *pragmatic*, not *dogmatic*; a *good enough* practices to follow. 
+The aim is to convince you that this workflow is worth using, rather than dictating that you have to!
+
+Even if you don't implement this workflow exactly, knowing when and why to use Issues/branches etc.
+will help you to build good habits even if your habits differ. 
+
+---
+
+
+

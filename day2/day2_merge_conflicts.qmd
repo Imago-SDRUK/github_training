@@ -1,0 +1,173 @@
+
+---
+title: "Resolving merge conflicts"
+---
+
+## What is a merge conflict?
+A merge conflict happens when Git says:
+
+> “There are two versions of this file, and I can’t combine them automatically. You need to tell me what the correct version is.”
+
+We want to choose the version that best represents what we need for the project. 
+
+For code, this often means keeping parts of both versions.
+For more complex formats (Jupyter notebooks, PDFs, other binaries), we may only be able to keep one.
+
+#### Why do merge conflicts occur? 
+
+::: {callout.important}
+ Merge conflicts don't mean you've done something wrong! They are a normal consequence of collaborative work. Don't Panic! 
+
+:::
+
+Conflicts happen when two branches change the same part of the same file differently.
+
+> They are a problem specific to collaborative work. 
+
+- Imagine we have our main branch with a file A0. 
+- This file is worked on by branches B1 and B2.
+- B1 gets theirs merged in first...
+- ...so we now have a new version of the file on `main` (A1).
+
+- But when it is B2's turn, the file they are working on may look *very* different to the one they were working on before - they were working off of A0, not A1!
+
+```ascii
+
+branch B1:       - B1 -
+               /        \ 
+main:      A0 ----------- A1 --- ?
+               \                /
+branch B2:       - B2 - - - - - 
+
+```
+
+If both branches changed different parts of the file, Git will resolve it automatically.
+If both changed the same part, Git asks you to *choose*.
+
+## Resolving merge conflicts
+
+**The best way to resolve conflicts by updating your branch with `main`** (merge `main` into your branch), then fixing conflicts locally.
+
+In the updated diagram below, we merge `main` into `B2` and end up with a new updated file `BA2`. We then can resolve any conflicts and merge the PR into `main` where we end up with our final file (`A2`).
+
+```ascii
+
+branch B1:       - B1 -
+               /        \ 
+main:      A0 ----------- A1 ------ A2
+               \                \  /
+branch B2:       - B2 - - - - - - BA2 
+
+```
+
+How exactly any *conflicts* in this merge are resolved depends on the type of file - they can sometimes be painless, or sometimes very hard to deal with.
+
+### The nice version
+
+Text files are fairly simple to fix, and can be done within GitHub's interface. When *merging the main branch into your branch*, you will see something like:
+
+```
+<<<<<<< HEAD
+def greet():
+    print("Hello from my branch!")
+=======
+def greet():
+    print("Hello from main!")
+>>>>>>> main
+```
+
+The "incoming" changes in this case is the `main` branch that you are trying to merge into the "current" branch (your feature branch, B2 in the example above). `=======` is a separator between these. 
+You can then fix the merge conflict by removing the extra `git` padding and code from the version you don't want to keep.
+
+:::{.callout-tip}
+On GitHub or in VSCode, there are buttons you can click to select which set of changes you want to keep - this will fix the formatting automatically. 
+
+:::
+
+### The not-so-nice version
+
+Jupyter notebooks are another major source of merge conflicts. In principle, it is easy enough to track changes in these files since they are text *format*, just with much more text to edit. 
+However, since e.g. cell execution counts/output can change, this makes it very complex in practice. 
+
+Possible solutions are:
+
+- move *core logic* to scripts (R/Python)
+- Strip outputs from notebooks before committing - these are likely causes of complex diffs (e.g. execution counts). 
+- Don't work collaboratively on notebooks where possible - this is likely to cause merge conflicts. 
+ 
+:::{.callout-tip}
+Sometimes it is necessary to work on Jupyter notebooks collaboratively e.g. when developing training material. In this case, try to break up the content as much as possible into separate notebooks, add new cells rather than edit existing ones, and *communicate within your team who is working on what* to avoid as much overlap as possible.
+:::
+
+### The truly nasty 
+
+Binaries and generated outputs are the absolute worst merge conflicts to deal with. These *cannot be merged* - you must pick one version of the file to keep.
+They aren't possible to resolve via GitHub - you have to use the `git` command-line interface or a graphical application like VSCode to solve them.
+
+::: {.callout-tip}
+
+The advice is - **keep these files out of GitHub repositories**! GitHub should store the software that *generates* these files, and perhaps the *inputs* to these files in some cases, but *not* the files themselves. 
+
+If you *need* the `.html` or `.pdf` in your repository, use GitHub Actions to generate them automatically (ask the RSE team if you want help with this!). 
+
+Then we have *one* canonical compiler and workflow that generates everything - no issues from people compiling locally. 
+
+If this isn't workable, at the very least, set up an Issue and document/ensure that everyone in the team uses the *exact* same versions of everything. 
+
+:::
+
+### Committing the merged changes
+
+Once you have resolved the conflict, you should commit-and-push your branch - it should now be ready for merging (subject to [review!](day2_code_review.qmd)).
+
+## How do we avoid them in the first place?
+
+> The best way to fix merge conflicts is to *not have merge conflicts*!
+
+Everything from Session 1 helps; good documentation, small PRs, and short-lived branches.
+
+- The longer a branch lives, the more it will diverge from `main`
+- So keeping PRs concise is useful - merge your work in more frequently, less divergence
+	- Split big pieces of work into smaller ones! 
+
+- Use Issues to track what is being worked on! This way, someone can see that you are working on a file, and see any changes coming. 
+- Keep repositories clean of unnecessary files - like non-critical data, plots, VSCode environment data, etc. Use `.gitignore` for these.
+
+#### I've followed all your advice and I'm still getting merge conflicts! What do I do? 
+
+If resolving a merge conflict is taking more than 10 minutes, stop. Get in touch with one of the RSEs for help/guidance.  
+
+These are some heuristics to keep in mind when dealing with specific files:
+
+- Binary files (e.g. `.pdf`):
+	- Git *cannot resolve these conflicts*. There is only one winner - pick the version you want to keep (the one already in `main`, or the one from your branch) and one you want to "remove" 
+		- (remember it will still be accessible via the commit history)
+
+- Jupyter notebooks:
+	- Pick *one* version as the "correct one". 
+	- If the notebooks differ in some way, *don't* try and merge them with diffs. It is going to be much more practical to just manually take the bits you need from one notebook and paste them into another, re-commit then pick that new version. Looking at the notebook manually to do this shouldn't be overly time consuming.
+		- And if it isn't, your notebook is too large/doing too many things.
+
+> Live demo - merging binary and Jupyter notebooks with conflicts, using GitHub Desktop.
+
+## Take-homes on merge conflicts
+
+To solve merge conflicts:
+- Pull latest main
+- Merge main into your branch
+- Open conflicts in VSCode
+- Pick or combine changes
+- Delete conflict markers
+- Commit & push
+
+Remember:
+- Merge conflicts don't mean something is *wrong* - just that Git needs you to make some choices on what is *right*.
+- Repeated and painful merge conflicts result from procedural issues, not a lack of Git skills! i.e.
+	- branches are too long‑lived
+	- PRs are too large
+	- generated files are being committed
+	- intent isn’t captured in Issues
+	- Jupyter notebooks are being edited by multiple people
+
+- **GitHub is meant to make teamwork easier, not harder — if it *is* making things harder, stop and get help.**
+

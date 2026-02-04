@@ -1,0 +1,56 @@
+---
+title: "Day 1 — Issues, branches, forks and pull requests"
+---
+
+This session focuses on **how work moves from an idea to production**.
+
+Topics:
+
+- Why Issues matter
+- Working on branches
+- Opening and reviewing PRs
+- Keeping `main` stable
+
+This may cover topics covered before in the first Imago GitHub workshop; the intent is to flesh out and demystify some of these topics. 
+
+## Pre‑workshop checklist
+
+Before the session, it is recommended that you please fill out the pre‑workshop survey!
+
+If you want to follow along with the demo, fork the repository at *(link)* 
+
+For Day 2, we will be attempting to resolve a merge conflict; if you want to follow along with this please ensure you have one of:
+- GitHub Desktop installed  
+  **or**
+- the VS Code (or IDE of your choice) GitHub extension  
+  **or**
+- some comfort using git via the command line
+
+
+---
+
+## Learn by doing
+
+It is recommended to follow along with the live exercise and do the steps yourself on your own pre-prepared fork of the demo repository, so that
+you can develop some muscle memory for the steps involved.
+
+Outside of this, the best way to get comfortable with these ideas is to **use them in your own projects!**. 
+The more you use them, the more natural they will feel, and the more you will see the benefits rather than just trusting the RSE team that they're worthwhile...
+
+
+## How to use these materials
+
+There are lots of concepts and behaviours covered here. You are **not expected to absorb everything in one pass**. 
+Not only that, but these are *guidelines* rather than *rules*. Chances are, you won't immediately start implementing all of these ideas, and that's OK! 
+The hope is that by at least being exposed to them now, you will start to think about your workflow in these terms, and gradually adopt more of these ideas over time.
+
+With that in mind, think of this as:
+
+- a persistent reference
+- something you can return to later
+- a shared set of conventions we can point back to
+
+
+
+---
+

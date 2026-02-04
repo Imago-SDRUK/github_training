@@ -1,0 +1,87 @@
+---
+title: Standard operating procedure for Imago repositories
+number-sections: false
+---
+
+This document describes how we should work collaboratively in Imago repositories.
+
+> Issue -> Branch -> Pull Request -> Review -> Merge -> Close
+
+
+## 1. Create an Issue
+
+- Work starts with Issues. Record the idea, problem, or goal.
+- Describe what needs to be done and why.
+- Add relevant background, links, or examples.
+- Apply appropriate labels (e.g., feature, bug, enhancement).
+- Tag people who are involved in the work you are doing.
+
+## 2. Create a branch linked to the Issue
+
+- Create a branch, not a fork.
+- Name your branch something meaningful.
+- Do not commit directly to `main`.
+- Use `.gitignore` to avoid committing outputs or system files.
+- Clear Jupyter notebook outputs unless they are required for illustration.
+- Commit small, coherent changes and push regularly so work is visible.
+
+## 3. Develop your work
+
+- Update the Issue with approaches tried and decisions made.
+- Describe any failed approaches 
+- Keep changes focused on the Issue (avoid unrelated edits).
+
+## 4. Open a Pull Request
+
+- Link the PR to the corresponding Issue(s) (e.g., Closes #23).
+- Provide a clear summary of:
+    - what changed,
+    - why it changed,
+    - how to test or verify it.
+
+- Provide context so reviewers understand intent.
+- If the work is not yet ready but you want feedback, create a Draft PR.
+- Merge the `main` branch into your branch - resolve merge conflicts in your branch, not on `main`. 
+- Apply appropriate labels and tags to the PR. 
+
+## 5. Request review
+
+- Request review from someone familiar with the codebase and subject domain.
+- For large changes, notify reviewers early and/or split into smaller PRs.
+- Don't merge your own PR without review unless the change is tested and trivial.
+
+## 6. Review 
+
+Reviewers should check:
+
+- Does the change do what it claims?
+- Does it affect other parts of the system?
+- Is it clear and maintainable?
+
+Feedback should be split into:
+
+- *blockers* - must be fixed to merge.
+- *advisories* - optional suggestions, e.g. extension ideas or minor/typo fixes.
+
+Guidance for reviewers:
+
+- Do suggest improvements - but review it *as is*, not *as you would have done it*. 
+- If it does what the author intends and doesn't hold back other work, it should be approved.
+- Use GitHub’s tools to comment on specific lines or provide structured feedback.
+- Ensure that feedback is constructive and helps the author get their work merged.
+
+> *Don't be Reviewer 2!*
+
+## 7. Respond to feedback
+
+- Address all blockers before merging.
+- For advisories either:
+    - implement the suggestion, or,
+    - create a follow-up Issue.
+- Mark conversations as resolved when complete.
+
+## 8. Merge and tidy up
+
+- Merge when the PR has at least one approval.
+- Ensure linked Issues are auto-closed or manually closed.
+- Update relevant documentation or examples.

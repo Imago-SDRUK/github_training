@@ -1,0 +1,12 @@
+---
+title: "Overview"
+---
+
+> **Goal**: Behaviours and workflows that make GitHub *save time* for our team.
+
+This was designed for training researchers working on Imago on how to use GitHub. The materials herein may not reflect what are technically *best practices*
+for a team of software devs, but are intended to aid researchers who are not familiar with GitHub use it for collaborative work.
+
+Many of the examples and references here are to private Imago repositories. That said, 
+this may still be a useful resource for ECRs elsewhere getting used to working with GitHub and exploring its 
+core features. 

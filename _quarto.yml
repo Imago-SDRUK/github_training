@@ -1,0 +1,48 @@
+
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Making the most out of GitHub for collaborative work (for Imago staff)"
+  author: "Jon Elsey"
+  date: today
+  page-footer:
+    left: "Imago | UKRI Imagery Data Service"
+    right: "This book was built with https://quarto.org/Quarto</a>."
+  cover-image: assets/Imago-logo.png
+  favicon: assets/Imago-logo.png
+  repo-url: https://github.com/JonElsey/github_training
+  repo-branch: main
+  repo-actions: [edit, issue]
+
+  chapters:
+    - index.qmd
+
+    - part: day1/day1_index.qmd
+      chapters:
+        - day1/day1_core_ideas.qmd
+        - day1/day1_issues.qmd
+        - day1/day1_committing_changes.qmd
+        - day1/day1_pull_requests.qmd
+        - day1/day1_wrapup.qmd
+
+    - part: day2/day2_index.qmd
+      chapters:
+        - day2/day2_code_review.qmd
+        - day2/day2_merge_conflicts.qmd
+        - day2/day2_wrapup.qmd
+        - day2/day2_sop.qmd
+
+# Global numbering
+number-sections: true
+number-depth: 2
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-location: left   # 👈 move “On this page” to the left pane (below chapters)
+    toc-depth: 2
+  pdf:
+    documentclass: scrreprt
