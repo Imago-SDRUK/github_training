@@ -119,6 +119,7 @@ Clicking this box will give you the option to make a branch - the default name b
 ![](../assets/day1/issue-branch-name.png)
 
 :::
+
 ---
 
 ## Commit messages
@@ -179,6 +180,7 @@ That doesn't matter! We want to build a culture of *collaboration*, not *blame*.
 :::
 
 ---
+
 ## Key takeaways
 
 - Treat `main` as stable, potentially external-facing code

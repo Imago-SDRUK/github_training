@@ -158,7 +158,7 @@ To solve merge conflicts:
 - Open conflicts in VSCode
 - Pick or combine changes
 - Delete conflict markers
-- Commit & push
+- Commit and push
 
 Remember:
 - Merge conflicts don't mean something is *wrong* - just that Git needs you to make some choices on what is *right*.
