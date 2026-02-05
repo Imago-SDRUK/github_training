@@ -26,7 +26,7 @@ Plenty of training already exists on what `git` commands do - [The Carpentries](
 This session focuses more on:
 
 - *how to structure your work so that it is easier to manage when working as a team*
-- using GitHub's features as a framework for this structure*
+- *using GitHub's features as a framework for this structure*
 - *how workflow choices can cause technical issues later on!*
 
 You may be familiar with *Issues*, *branches* and *pull requests* already. These are the primary building blocks of a good collaborative workflow.

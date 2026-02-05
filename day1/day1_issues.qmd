@@ -117,6 +117,13 @@ You can use the `good first issue` or `help wanted` labels to indicate that cert
 
 ![](../assets/day1/issue-labels.png)
 
+:::{.callout-tip}
+# Issues are interactive spaces
+
+Get involved with Issues made by other people! If you have ideas on how to implement something, questions, ideas, then write it down. 
+:::
+
+
 ## Example Issue 
 
 This is an example of what an Issue might look like - it can be more or less verbose than this depending on the task.
