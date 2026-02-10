@@ -18,7 +18,7 @@ This may cover topics covered before in the first Imago GitHub workshop; the int
 
 Before the session, it is recommended that you please fill out the pre‑workshop survey!
 
-If you want to follow along with the demo, fork the repository at *(link)* 
+If you want to follow along with the demo, fork the repository at *(link TBD for Day 2)* 
 
 For Day 2, we will be attempting to resolve a merge conflict; if you want to follow along with this please ensure you have one of:
 - GitHub Desktop installed  

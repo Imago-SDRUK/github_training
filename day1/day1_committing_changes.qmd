@@ -100,6 +100,14 @@ That said, it is ultimately project-dependent. If the documentation explicitly s
 
 ---
 
+## Branches should be transient
+
+Long-lived branches are not ideal! The longer a branch lives, the more likely it will diverge from `main`. 
+It also detracts from the best practices around Issues - they should be used for digestible chunks of work. 
+
+Keeping long-lived branches is fine for doing work that isn't intended to ever be merged (e.g. as a playground), 
+but ideally they should be completed and merged and new branches/Issues set up to track follow-on work.
+
 ## Branch naming matters
 
 Give your branches **descriptive names**. A branch name should convey the *highest‑level intent* of the work. A bad example might be:
@@ -140,6 +148,13 @@ Clicking this box will give you the option to make a branch - the default name b
 The same principle applies to commit messages; it works better if there is a convention for how we write them.
 
 One example is to use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/), or a similar style.
+
+:::{.callout-tip}
+
+Writing commit messages is *much easier* if your commits themselves are logically structured 
+- i.e. they implement one thing in a fairly stable state.
+
+:::
 
 ### Why commit history matters:
 
