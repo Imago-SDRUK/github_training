@@ -97,6 +97,7 @@ Branches live *inside* the main repository, and are visible to the team.
 Forks sit outside the repo and hide your work unless people know where to look. So when working as a team, it is better to use branches over forks.
 
 That said, it is ultimately project-dependent. If the documentation explicitly says to fork rather than branch, then follow that convention.
+
 ---
 
 ## Branch naming matters

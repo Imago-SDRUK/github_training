@@ -7,7 +7,7 @@ number-sections: false
 
 ## What this training is about
 
-This session is about **how to use GitHub effectively as a team**. 
+This session is about **how to use GitHub effectively as a **team**. 
 
 The main aim here is to demystify core concepts and give you a set of good (enough) practices for using GitHub.
 
@@ -31,10 +31,14 @@ This session focuses more on:
 
 You may be familiar with *Issues*, *branches* and *pull requests* already. These are the primary building blocks of a good collaborative workflow.
 
-## A caveat
+:::{.callout}
+# A caveat
 
 *There are many many different ideas, frameworks and philosophies on what workflows work best*. 
+
 My aim here is to provide a **good enough** set of guidelines to follow for our work, simplifying as much as possible to reflect the diverse range of experience within our team.
+
+:::
 
 ## Fundamental workflow
 
@@ -47,6 +51,7 @@ Each step serves a purpose:
 - **Issue**: capture intent and context, agree on what should be done 
 - **Branch**: isolate work so it doesn't affect other work
 - **PR**: invite discussion and review
+
 - **Review**: improve quality and share understanding
 - **Merge**: integrate into stable code, make discoverable 
 - **Close**: record what was done

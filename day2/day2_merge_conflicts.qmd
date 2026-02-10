@@ -5,6 +5,7 @@ number-sections: false
 ---
 
 ## What is a merge conflict?
+
 A merge conflict happens when Git says:
 
 > “There are two versions of this file, and I can’t combine them automatically. You need to tell me what the correct version is.”
@@ -45,6 +46,14 @@ branch B2:       - B2 - - - - -
 If both branches changed different parts of the file, Git will resolve it automatically.
 If both changed the same part, Git asks you to *choose*.
 
+:::{.callout-tip}
+
+In this example, branches B1 and B2 could have many many different commits before they get pulled in.
+
+If all of those commits had been made to `main`, then the number of merge conflicts could have been much higher - imagine if every single commit was a separate branch!
+
+:::
+
 ## Resolving merge conflicts
 
 **The best way to resolve conflicts by updating your branch with `main`** (merge `main` into your branch), then fixing conflicts locally.
@@ -67,7 +76,7 @@ How exactly any *conflicts* in this merge are resolved depends on the type of fi
 
 Text files are fairly simple to fix, and can be done within GitHub's interface. When *merging the main branch into your branch*, you will see something like:
 
-```
+```yaml
 <<<<<<< HEAD
 def greet():
     print("Hello from my branch!")
