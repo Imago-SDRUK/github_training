@@ -239,6 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#you-are-here" id="toc-you-are-here" class="nav-link active" data-scroll-target="#you-are-here">You are here:</a></li>
   <li><a href="#from-issues-to-lines-of-code" id="toc-from-issues-to-lines-of-code" class="nav-link" data-scroll-target="#from-issues-to-lines-of-code">From Issues to lines of code</a></li>
   <li><a href="#forks-vs-branches" id="toc-forks-vs-branches" class="nav-link" data-scroll-target="#forks-vs-branches">Forks vs branches</a></li>
+  <li><a href="#branches-should-be-transient" id="toc-branches-should-be-transient" class="nav-link" data-scroll-target="#branches-should-be-transient">Branches should be transient</a></li>
   <li><a href="#branch-naming-matters" id="toc-branch-naming-matters" class="nav-link" data-scroll-target="#branch-naming-matters">Branch naming matters</a></li>
   <li><a href="#commit-messages" id="toc-commit-messages" class="nav-link" data-scroll-target="#commit-messages">Commit messages</a></li>
   <li><a href="#how-often-should-i-commitpush-my-branch" id="toc-how-often-should-i-commitpush-my-branch" class="nav-link" data-scroll-target="#how-often-should-i-commitpush-my-branch">How often should I <code>commit</code>/<code>push</code> my branch?</a></li>
@@ -356,6 +357,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>That said, it is ultimately project-dependent. If the documentation explicitly says to fork rather than branch, then follow that convention.</p>
 <hr>
 </section>
+<section id="branches-should-be-transient" class="level2">
+<h2 class="anchored" data-anchor-id="branches-should-be-transient">Branches should be transient</h2>
+<p>Long-lived branches are not ideal! The longer a branch lives, the more likely it will diverge from <code>main</code>. It also detracts from the best practices around Issues - they should be used for digestible chunks of work.</p>
+<p>Keeping long-lived branches is fine for doing work that isn’t intended to ever be merged (e.g.&nbsp;as a playground), but ideally they should be completed and merged and new branches/Issues set up to track follow-on work.</p>
+</section>
 <section id="branch-naming-matters" class="level2">
 <h2 class="anchored" data-anchor-id="branch-naming-matters">Branch naming matters</h2>
 <p>Give your branches <strong>descriptive names</strong>. A branch name should convey the <em>highest‑level intent</em> of the work. A bad example might be:</p>
@@ -401,6 +407,19 @@ Tip
 <h2 class="anchored" data-anchor-id="commit-messages">Commit messages</h2>
 <p>The same principle applies to commit messages; it works better if there is a convention for how we write them.</p>
 <p>One example is to use <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a>, or a similar style.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Writing commit messages is <em>much easier</em> if your commits themselves are logically structured - i.e.&nbsp;they implement one thing in a fairly stable state.</p>
+</div>
+</div>
 <section id="why-commit-history-matters" class="level3">
 <h3 class="anchored" data-anchor-id="why-commit-history-matters">Why commit history matters:</h3>
 <section id="the-good-conventional-commits" class="level4">
