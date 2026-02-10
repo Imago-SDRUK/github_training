@@ -44,7 +44,7 @@
     "href": "day1/day1_core_ideas.html",
     "title": "Core concepts",
     "section": "",
-    "text": "What this training is about\nThis session is about how to use GitHub effectively as a team.\nThe main aim here is to demystify core concepts and give you a set of good (enough) practices for using GitHub.",
+    "text": "What this training is about\nThis session is about how to use GitHub effectively as a team**.\nThe main aim here is to demystify core concepts and give you a set of good (enough) practices for using GitHub.",
     "crumbs": [
       "Day 1 — Issues, branches, forks and pull requests",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Core concepts</span>"
@@ -55,18 +55,7 @@
     "href": "day1/day1_core_ideas.html#focus-behaviours-over-buttons",
     "title": "Core concepts",
     "section": "Focus: behaviours over buttons",
-    "text": "Focus: behaviours over buttons\nThis training is primarily about working patterns, not specific commands or buttons.\n\nThis training is agnostic to whether you use:\n\nthe command line\nGitHub Desktop\nVS Code\nother GUIs\n\n\nPlenty of training already exists on what git commands do - The Carpentries have some amazing courses on this and other topics.\nThis session focuses more on:\n\nhow to structure your work so that it is easier to manage when working as a team\nusing GitHub’s features as a framework for this structure\nhow workflow choices can cause technical issues later on!\n\nYou may be familiar with Issues, branches and pull requests already. These are the primary building blocks of a good collaborative workflow.",
-    "crumbs": [
-      "Day 1 — Issues, branches, forks and pull requests",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Core concepts</span>"
-    ]
-  },
-  {
-    "objectID": "day1/day1_core_ideas.html#a-caveat",
-    "href": "day1/day1_core_ideas.html#a-caveat",
-    "title": "Core concepts",
-    "section": "A caveat",
-    "text": "A caveat\nThere are many many different ideas, frameworks and philosophies on what workflows work best. My aim here is to provide a good enough set of guidelines to follow for our work, simplifying as much as possible to reflect the diverse range of experience within our team.",
+    "text": "Focus: behaviours over buttons\nThis training is primarily about working patterns, not specific commands or buttons.\n\nThis training is agnostic to whether you use:\n\nthe command line\nGitHub Desktop\nVS Code\nother GUIs\n\n\nPlenty of training already exists on what git commands do - The Carpentries have some amazing courses on this and other topics.\nThis session focuses more on:\n\nhow to structure your work so that it is easier to manage when working as a team\nusing GitHub’s features as a framework for this structure\nhow workflow choices can cause technical issues later on!\n\nYou may be familiar with Issues, branches and pull requests already. These are the primary building blocks of a good collaborative workflow.\n\n\n\n\n\n\nNoneA caveat\n\n\n\nThere are many many different ideas, frameworks and philosophies on what workflows work best.\nMy aim here is to provide a good enough set of guidelines to follow for our work, simplifying as much as possible to reflect the diverse range of experience within our team.",
     "crumbs": [
       "Day 1 — Issues, branches, forks and pull requests",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Core concepts</span>"
@@ -198,18 +187,7 @@
     "href": "day1/day1_committing_changes.html#forks-vs-branches",
     "title": "Committing your work",
     "section": "Forks vs branches",
-    "text": "Forks vs branches\nA rule of thumb: - For work within Imago/other team repositories: use branches - For work on projects you don’t own: use forks\n\nBranches live inside the main repository, and are visible to the team. Forks sit outside the repo and hide your work unless people know where to look. So when working as a team, it is better to use branches over forks.",
-    "crumbs": [
-      "Day 1 — Issues, branches, forks and pull requests",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Committing your work</span>"
-    ]
-  },
-  {
-    "objectID": "day1/day1_committing_changes.html#that-said-it-is-ultimately-project-dependent.-if-the-documentation-explicitly-says-to-fork-rather-than-branch-then-follow-that-convention.",
-    "href": "day1/day1_committing_changes.html#that-said-it-is-ultimately-project-dependent.-if-the-documentation-explicitly-says-to-fork-rather-than-branch-then-follow-that-convention.",
-    "title": "Committing your work",
-    "section": "That said, it is ultimately project-dependent. If the documentation explicitly says to fork rather than branch, then follow that convention.",
-    "text": "That said, it is ultimately project-dependent. If the documentation explicitly says to fork rather than branch, then follow that convention.",
+    "text": "Forks vs branches\nA rule of thumb: - For work within Imago/other team repositories: use branches - For work on projects you don’t own: use forks\n\nBranches live inside the main repository, and are visible to the team. Forks sit outside the repo and hide your work unless people know where to look. So when working as a team, it is better to use branches over forks.\nThat said, it is ultimately project-dependent. If the documentation explicitly says to fork rather than branch, then follow that convention.",
     "crumbs": [
       "Day 1 — Issues, branches, forks and pull requests",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Committing your work</span>"
@@ -406,7 +384,7 @@
     "href": "day2/day2_merge_conflicts.html#what-is-a-merge-conflict",
     "title": "Resolving merge conflicts",
     "section": "",
-    "text": "“There are two versions of this file, and I can’t combine them automatically. You need to tell me what the correct version is.”\n\n\n\n\nWhy do merge conflicts occur?\n\nMerge conflicts don’t mean you’ve done something wrong! They are a normal consequence of collaborative work. Don’t panic!\n\nConflicts happen when two branches change the same part of the same file differently.\n\nThey are a problem specific to collaborative work.\n\n\nImagine we have our main branch with a file A0.\nThis file is worked on by branches B1 and B2.\nB1 gets theirs merged in first…\n…so we now have a new version of the file on main (A1).\nBut when it is B2’s turn, the file they are working on may look very different to the one they were working on before - they were working off of A0, not A1!\n\n\nbranch B1:       - B1 -\n               /        \\ \nmain:      A0 ----------- A1 --- ?\n               \\                /\nbranch B2:       - B2 - - - - - \nIf both branches changed different parts of the file, Git will resolve it automatically. If both changed the same part, Git asks you to choose.",
+    "text": "“There are two versions of this file, and I can’t combine them automatically. You need to tell me what the correct version is.”\n\n\n\n\nWhy do merge conflicts occur?\n\nMerge conflicts don’t mean you’ve done something wrong! They are a normal consequence of collaborative work. Don’t panic!\n\nConflicts happen when two branches change the same part of the same file differently.\n\nThey are a problem specific to collaborative work.\n\n\nImagine we have our main branch with a file A0.\nThis file is worked on by branches B1 and B2.\nB1 gets theirs merged in first…\n…so we now have a new version of the file on main (A1).\nBut when it is B2’s turn, the file they are working on may look very different to the one they were working on before - they were working off of A0, not A1!\n\n\nbranch B1:       - B1 -\n               /        \\ \nmain:      A0 ----------- A1 --- ?\n               \\                /\nbranch B2:       - B2 - - - - - \nIf both branches changed different parts of the file, Git will resolve it automatically. If both changed the same part, Git asks you to choose.\n\n\n\n\n\n\nTip\n\n\n\nIn this example, branches B1 and B2 could have many many different commits before they get pulled in.\nIf all of those commits had been made to main, then the number of merge conflicts could have been much higher - imagine if every single commit was a separate branch!",
     "crumbs": [
       "Day 2 - Code review, merge conflicts and standard workflows",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Resolving merge conflicts</span>"

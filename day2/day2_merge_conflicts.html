@@ -300,6 +300,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">               \                /</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">branch B2</span><span class="kw">:</span><span class="at">       - B2 - - - - - </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>If both branches changed different parts of the file, Git will resolve it automatically. If both changed the same part, Git asks you to <em>choose</em>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In this example, branches B1 and B2 could have many many different commits before they get pulled in.</p>
+<p>If all of those commits had been made to <code>main</code>, then the number of merge conflicts could have been much higher - imagine if every single commit was a separate branch!</p>
+</div>
+</div>
 </section>
 </section>
 <section id="resolving-merge-conflicts" class="level2">
@@ -316,13 +330,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-nice-version" class="level3">
 <h3 class="anchored" data-anchor-id="the-nice-version">The nice version</h3>
 <p>Text files are fairly simple to fix, and can be done within GitHub’s interface. When <em>merging the main branch into your branch</em>, you will see something like:</p>
-<pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-def greet():
-    print("Hello from my branch!")
-=======
-def greet():
-    print("Hello from main!")
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; main</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="at">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">def greet()</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">    print("Hello from my branch!")</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">=======</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">def greet()</span><span class="kw">:</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">    print("Hello from main!")</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;&gt;&gt;&gt;&gt;&gt;&gt; main</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The “incoming” changes in this case is the <code>main</code> branch that you are trying to merge into the “current” branch (your feature branch, B2 in the example above). <code>=======</code> is a separator between these. You can then fix the merge conflict by removing the extra <code>git</code> padding and code from the version you don’t want to keep.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
