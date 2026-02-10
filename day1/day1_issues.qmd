@@ -64,7 +64,8 @@ If you notice a problem, think of an improvement, have an idea you *don’t yet 
 3. Start work on the idea
 	- update the Issue with what you try
 	- include things that didn’t work
-4. Set up a [pull request](day1_pull_requests.qmd) when the work is nearing completion.
+4. Commit that work to a [branch](day1_committing_changes.qmd)
+5. Set up a [pull request](day1_pull_requests.qmd) when the work is nearing completion.
 
 
 ::: {.callout-important}
