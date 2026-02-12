@@ -10,6 +10,7 @@ and ensure that any changes that are made don't make the product worse rather th
 ### Choosing your reviewer
 
 Pick a colleague who is:
+
 - 1: best-placed to understand how and why you have done what you have done. 
 - 2: available to review! 
 
@@ -43,6 +44,7 @@ When reviewing, reviewers should consider:
 - Split feedback into things that *really need fixing* (blockers), and things that could be touched up or improved (advisories).
 	- e.g. a critical bug that changes results should prevent it from being merged until it is fixed, but a documentation typo can just be flagged.
 	- Approve based on the *blockers* being fixed, not the advisories.
+
 - If something is unclear - ask for clarification. If you don't understand it now, then chances are the original author won't understand it when you revisit it in 6 months time.
 - Review the code *as-is* - not as *you would have written it*. Don't block based on personal style.
 
@@ -70,7 +72,7 @@ We will go through PR #N in the demo repository.
 
 ### Responding to reviewer comments
 
-- As with reviewing, this is not like a response to reviewers. Be proactive rather than reactive! It is a conversation, not a document. 
+- As with reviewing, this is not like a paper review response. Be proactive rather than reactive! It is a conversation, not a document. 
 Chat with your reviewer and discuss the changes on-the-fly, and iterate on ideas until they are ready.
 	- If a discussion thread is getting complex - you can always schedule a call with the reviewer! Just make sure to document what the outcome of that discussion was.
 
@@ -80,7 +82,8 @@ Fix the blockers that the reviewer flags, try and fix the advisories, and create
 ## Closing issues/PRs
 
 - Close issues/PRs when they are *good enough*; that the original intent is satisfied, and it doesn't make `main` worse. Perfect is the enemy of the good! 
-	- You can always create new Issues later if you realise that what you've done doesn't work for whatever reason, or come up with new ideas for extensions.
+	- You can always create new Issues later if you realise that what you've done doesn't work for some edge case you hadn't thought of, or if you come up with new ideas for extensions.
+
 - **Avoid scope creep** - submit and close your PRs when they fulfil their task, avoid the temptation to keep adding more stuff. 
 Remember - smaller PRs are generally better - so split this work up into a new one! 
 
@@ -96,6 +99,7 @@ Before merging:
 - Check that your branch is up‑to‑date with main. If GitHub says “This branch is out‑of‑date”, click Update branch
 (or merge main into your branch locally).
 	- This will flag whether we have any [merge conflicts](day2_merge_conflicts.qmd).
+
 - Resolve any merge conflicts that do arise! 
 
 - Press the “Merge pull request” button.
@@ -105,7 +109,8 @@ Before merging:
 
 This is dependent on who has write access in the repository. In Imago, most of us have write access to repositories we are working on. 
 
-Pull requests and code review are for feedback and approval. Once this approval is given, the onus is on the **creator of the PR** to merge their work. However, if the creator doesn't have write access, then the *reviewer* must merge the work once it is approved.
+Pull requests and code review are for feedback and approval. Once this approval is given, the onus is on the **creator of the PR** to merge their work. 
+However, if the creator doesn't have write access, then the *reviewer* must merge the work once it is approved.
 
 That said, these are not hard and fast rules - as long as there is a consistent expectation within your team.
 

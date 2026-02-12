@@ -17,9 +17,9 @@ This document describes how we should work collaboratively in Imago repositories
 
 ## 2. Create a branch linked to the Issue
 
+- Do not commit directly to `main`.
 - Create a branch, not a fork.
 - Name your branch something meaningful.
-- Do not commit directly to `main`.
 - Use `.gitignore` to avoid committing outputs or system files.
 - Clear Jupyter notebook outputs unless they are required for illustration.
 - Commit small, coherent changes and push regularly so work is visible.
@@ -28,7 +28,7 @@ This document describes how we should work collaboratively in Imago repositories
 
 - Update the Issue with approaches tried and decisions made.
 - Describe any failed approaches 
-- Keep changes focused on the Issue (avoid unrelated edits).
+- Keep changes focused on the Issue (avoid unrelated edits where possible, or at least document them).
 
 ## 4. Open a Pull Request
 

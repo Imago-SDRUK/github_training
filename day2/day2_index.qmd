@@ -6,6 +6,7 @@ number-sections: false
 This session focuses on **how we merge code into the `main` branch**.
 
 Topics:
+
 - Code review - and why it is useful
 - How to avoid merge conflicts in the first place
 - How to deal with the merge conflicts that do arise 

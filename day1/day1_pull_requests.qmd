@@ -26,8 +26,20 @@ That means: **creating a pull request (PR)**.
 > A PR is a structured way to merge a set of changes into `main`, with context, discussion, and review. 
 It is the bridge between individual work and shared code.
 
-:::{.callout-tip}
-A PR is **not** a final deliverable! A PR is a way of structuring conversation around a change you want to make. 
+:::{.callout}
+# Why "pull request"?
+
+I think "pull request" is an odd bit of nomenclature that obfuscates the core idea a bit. The name is historical -  
+quite literally it was a request for someone to run `git pull` on their code. 
+
+Other `git` repository hosting services like GitLab use the much more sensible "merge request" naming, which 
+is a bit more intuitive.
+
+:::
+
+### A PR is **not** a final deliverable
+
+A PR is a way of structuring conversation around a change you want to make. 
 
 By opening up a PR you invite ideas and feedback on what you are doing in a more direct way than an Issue, 
 and you're more likely to whip up what you have into shape with the help of others' ideas than you are working on it by yourself.

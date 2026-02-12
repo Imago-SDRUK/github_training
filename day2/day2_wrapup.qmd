@@ -119,6 +119,8 @@ Writing them is intended to be much simpler than a normal paper - the hard work 
 - [https://github.com/Imago-SDRUK/Imago/issues/21](https://github.com/Imago-SDRUK/Imago/issues/21) - example of an Issue for a long-term piece of work to be worked on later
 - [https://github.com/Imago-SDRUK/Imago/pull/13](https://github.com/Imago-SDRUK/Imago/pull/13) - example of a decent-sized PR with code review
 
+## Final talking points
 
-
+- Is it worth adding restrictions on committing to `main` directly? GitHub can let us do this.
+- Similarly, we *could* place restrictions on who is able to merge PRs.
 ---
