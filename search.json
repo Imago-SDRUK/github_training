@@ -275,7 +275,7 @@
     "href": "day1/day1_pull_requests.html#what-is-a-pull-request",
     "title": "Pull Requests",
     "section": "What is a pull request?",
-    "text": "What is a pull request?\n\nA PR is a structured way to merge a set of changes into main, with context, discussion, and review. It is the bridge between individual work and shared code.\n\n\n\n\n\n\n\nTip\n\n\n\nA PR is not a final deliverable! A PR is a way of structuring conversation around a change you want to make.\nBy opening up a PR you invite ideas and feedback on what you are doing in a more direct way than an Issue, and you’re more likely to whip up what you have into shape with the help of others’ ideas than you are working on it by yourself.",
+    "text": "What is a pull request?\n\nA PR is a structured way to merge a set of changes into main, with context, discussion, and review. It is the bridge between individual work and shared code.\n\n\n\n\n\n\n\nNoneWhy “pull request”?\n\n\n\nI think “pull request” is an odd bit of nomenclature that obfuscates the core idea a bit. The name is historical -\nquite literally it was a request for someone to run git pull on their code.\nOther git repository hosting services like GitLab use the much more sensible “merge request” naming, which is a bit more intuitive.\n\n\n\nA PR is not a final deliverable\nA PR is a way of structuring conversation around a change you want to make.\nBy opening up a PR you invite ideas and feedback on what you are doing in a more direct way than an Issue, and you’re more likely to whip up what you have into shape with the help of others’ ideas than you are working on it by yourself.\n:::",
     "crumbs": [
       "Day 1 — Issues, branches, forks and pull requests",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Pull Requests</span>"
@@ -352,7 +352,7 @@
     "href": "day2/day2_index.html",
     "title": "Day 2 - Code review, merge conflicts and standard workflows",
     "section": "",
-    "text": "This session focuses on how we merge code into the main branch.\nTopics: - Code review - and why it is useful - How to avoid merge conflicts in the first place - How to deal with the merge conflicts that do arise - Tips and tricks - Standard operating procedure (SOP)\nThese topics were not covered in the first GitHub workshop run by Batool - here I will introduce them and give some guidance on what to do if you are asked to review code or encounter merge conflicts.",
+    "text": "This session focuses on how we merge code into the main branch.\nTopics:\n\nCode review - and why it is useful\nHow to avoid merge conflicts in the first place\nHow to deal with the merge conflicts that do arise\nTips and tricks\nStandard operating procedure (SOP)\n\nThese topics were not covered in the first GitHub workshop run by Batool - here I will introduce them and give some guidance on what to do if you are asked to review code or encounter merge conflicts.",
     "crumbs": [
       "Day 2 - Code review, merge conflicts and standard workflows"
     ]
@@ -362,7 +362,7 @@
     "href": "day2/day2_code_review.html",
     "title": "7  Code review",
     "section": "",
-    "text": "Choosing your reviewer\nCode review is intended to ensure that main is maintainable and kept to a high quality. The idea is that more than one person in the team should be able to understand what developments are being made from a technical perspective, and ensure that any changes that are made don’t make the product worse rather than better.\nPick a colleague who is: - 1: best-placed to understand how and why you have done what you have done. - 2: available to review!\nYou should use the buttons to assign them to be a reviewer - this is not a faux pas, but a useful way to draw someone’s attention to some work they’re probably interested in.",
+    "text": "Choosing your reviewer\nCode review is intended to ensure that main is maintainable and kept to a high quality. The idea is that more than one person in the team should be able to understand what developments are being made from a technical perspective, and ensure that any changes that are made don’t make the product worse rather than better.\nPick a colleague who is:\nYou should use the buttons to assign them to be a reviewer - this is not a faux pas, but a useful way to draw someone’s attention to some work they’re probably interested in.",
     "crumbs": [
       "Day 2 - Code review, merge conflicts and standard workflows",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Code review</span>"
@@ -373,7 +373,7 @@
     "href": "day2/day2_code_review.html#closing-issuesprs",
     "title": "7  Code review",
     "section": "7.1 Closing issues/PRs",
-    "text": "7.1 Closing issues/PRs\n\nClose issues/PRs when they are good enough; that the original intent is satisfied, and it doesn’t make main worse. Perfect is the enemy of the good!\n\nYou can always create new Issues later if you realise that what you’ve done doesn’t work for whatever reason, or come up with new ideas for extensions.\n\nAvoid scope creep - submit and close your PRs when they fulfil their task, avoid the temptation to keep adding more stuff. Remember - smaller PRs are generally better - so split this work up into a new one!\n\n\nMerging into main\nOnce your Pull Request has been approved, the final step is to merge your work into main.\nBefore merging:\n\nMake sure all review comments are resolved.\n\nIf your reviewer marked anything as a blocker, fix it before merging.\n\nCheck that your branch is up‑to‑date with main. If GitHub says “This branch is out‑of‑date”, click Update branch (or merge main into your branch locally).\n\nThis will flag whether we have any merge conflicts.\n\nResolve any merge conflicts that do arise!\nPress the “Merge pull request” button.\n\nGitHub will show a green button at the bottom of the PR once everything is ready.\n\n\n\n\nWho merges?\nThis is dependent on who has write access in the repository. In Imago, most of us have write access to repositories we are working on.\nPull requests and code review are for feedback and approval. Once this approval is given, the onus is on the creator of the PR to merge their work. However, if the creator doesn’t have write access, then the reviewer must merge the work once it is approved.\nThat said, these are not hard and fast rules - as long as there is a consistent expectation within your team.",
+    "text": "7.1 Closing issues/PRs\n\nClose issues/PRs when they are good enough; that the original intent is satisfied, and it doesn’t make main worse. Perfect is the enemy of the good!\n\nYou can always create new Issues later if you realise that what you’ve done doesn’t work for some edge case you hadn’t thought of, or if you come up with new ideas for extensions.\n\nAvoid scope creep - submit and close your PRs when they fulfil their task, avoid the temptation to keep adding more stuff. Remember - smaller PRs are generally better - so split this work up into a new one!\n\n\nMerging into main\nOnce your Pull Request has been approved, the final step is to merge your work into main.\nBefore merging:\n\nMake sure all review comments are resolved.\n\nIf your reviewer marked anything as a blocker, fix it before merging.\n\nCheck that your branch is up‑to‑date with main. If GitHub says “This branch is out‑of‑date”, click Update branch (or merge main into your branch locally).\n\nThis will flag whether we have any merge conflicts.\n\nResolve any merge conflicts that do arise!\nPress the “Merge pull request” button.\n\nGitHub will show a green button at the bottom of the PR once everything is ready.\n\n\n\n\nWho merges?\nThis is dependent on who has write access in the repository. In Imago, most of us have write access to repositories we are working on.\nPull requests and code review are for feedback and approval. Once this approval is given, the onus is on the creator of the PR to merge their work. However, if the creator doesn’t have write access, then the reviewer must merge the work once it is approved.\nThat said, these are not hard and fast rules - as long as there is a consistent expectation within your team.",
     "crumbs": [
       "Day 2 - Code review, merge conflicts and standard workflows",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Code review</span>"
@@ -479,6 +479,17 @@
     ]
   },
   {
+    "objectID": "day2/day2_wrapup.html#final-talking-points",
+    "href": "day2/day2_wrapup.html#final-talking-points",
+    "title": "Wrap up",
+    "section": "Final talking points",
+    "text": "Final talking points\n\nIs it worth adding restrictions on committing to main directly? GitHub can let us do this.\nSimilarly, we could place restrictions on who is able to merge PRs.",
+    "crumbs": [
+      "Day 2 - Code review, merge conflicts and standard workflows",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Wrap up</span>"
+    ]
+  },
+  {
     "objectID": "day2/day2_sop.html",
     "href": "day2/day2_sop.html",
     "title": "Standard operating procedure for Imago repositories",
@@ -505,7 +516,7 @@
     "href": "day2/day2_sop.html#create-a-branch-linked-to-the-issue",
     "title": "Standard operating procedure for Imago repositories",
     "section": "2. Create a branch linked to the Issue",
-    "text": "2. Create a branch linked to the Issue\n\nCreate a branch, not a fork.\nName your branch something meaningful.\nDo not commit directly to main.\nUse .gitignore to avoid committing outputs or system files.\nClear Jupyter notebook outputs unless they are required for illustration.\nCommit small, coherent changes and push regularly so work is visible.",
+    "text": "2. Create a branch linked to the Issue\n\nDo not commit directly to main.\nCreate a branch, not a fork.\nName your branch something meaningful.\nUse .gitignore to avoid committing outputs or system files.\nClear Jupyter notebook outputs unless they are required for illustration.\nCommit small, coherent changes and push regularly so work is visible.",
     "crumbs": [
       "Day 2 - Code review, merge conflicts and standard workflows",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Standard operating procedure for Imago repositories</span>"
@@ -516,7 +527,7 @@
     "href": "day2/day2_sop.html#develop-your-work",
     "title": "Standard operating procedure for Imago repositories",
     "section": "3. Develop your work",
-    "text": "3. Develop your work\n\nUpdate the Issue with approaches tried and decisions made.\nDescribe any failed approaches\nKeep changes focused on the Issue (avoid unrelated edits).",
+    "text": "3. Develop your work\n\nUpdate the Issue with approaches tried and decisions made.\nDescribe any failed approaches\nKeep changes focused on the Issue (avoid unrelated edits where possible, or at least document them).",
     "crumbs": [
       "Day 2 - Code review, merge conflicts and standard workflows",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Standard operating procedure for Imago repositories</span>"
