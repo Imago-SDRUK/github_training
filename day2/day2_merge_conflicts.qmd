@@ -220,9 +220,7 @@ To solve merge conflicts:
 
 - Pull latest main
 - Merge main into your branch
-- Open conflicts in VSCode
-- Pick or combine changes
-- Delete conflict markers
+- Pick which changes you want to keep using your tool of choice
 - Commit and push
 
 Remember:
