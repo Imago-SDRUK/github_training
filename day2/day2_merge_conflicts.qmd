@@ -116,16 +116,16 @@ However, since e.g. cell execution counts/output can change, this makes it very 
 
 The best way to deal with this is to avoid overuse of Jupyter notebooks, and follow practices that minimise problems for ones you *do* use:
 
-- move *core logic* to scripts (R/Python)
+- move core logic to scripts (R/Python)
 - Strip outputs from notebooks before committing. If outputs are clear, there are no execution counts or other metadata to worry about.
-	- There *are ways* to automate this process - get in touch if useful
+	- There are ways to automate this process - get in touch if useful
 - Don't work collaboratively on the *same parts* of notebooks where possible!
 
 :::{.callout}
 # But I want to see outputs...
 
 Unfortunately, the *outputs* are the cause of all of the issues here. The best bet in this instance is to save whatever assets you want from the notebook(s)
-and upload separately. Or better yet, provide a link to where someone can obtain the necessary data/dependencies so that they can run *locally* to reproduce.
+and upload separately. Or better yet, provide a link to where someone can obtain the necessary data/dependencies so that they can run locally to reproduce.
 
 If they *really are that important* - then you will have to just face resolving the merge conflict each time.
 :::
