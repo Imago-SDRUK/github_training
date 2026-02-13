@@ -237,7 +237,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul class="collapse">
   <li><a href="#specific-tips" id="toc-specific-tips" class="nav-link active" data-scroll-target="#specific-tips">Specific Tips</a></li>
-  <li><a href="#general-thoughts" id="toc-general-thoughts" class="nav-link" data-scroll-target="#general-thoughts">General thoughts</a></li>
   <li><a href="#final-talking-points" id="toc-final-talking-points" class="nav-link" data-scroll-target="#final-talking-points">Final talking points</a></li>
   </ul>
 <div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/Imago-SDRUK/github_training/edit/main/day2/day2_wrapup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Imago-SDRUK/github_training/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -344,7 +343,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You can create a shared bibliography in <code>BibTeX</code> format.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">simpson2020</span>,</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>={Very Cool Important Research},</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>={Simpson, Homer AND Shabadoo, Junior, Joey Jo-Jo},</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>={Simpson, Homer AND Shabadoo, Joey Jo-Jo Junior},</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">journal</span>={Nature},</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>={2020}</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -364,6 +363,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>Recent very cool work <span class="co">[</span><span class="ot">@simpson2020</span><span class="co">]</span> shows that...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You can change the citation style via adding <code>csl</code> to the title section, e.g.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> some work</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> references.bib</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> nature.csl</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>See <a href="https://quarto.org/docs/authoring/citations.html">here</a> for more info.</p>
 </section>
 <section id="citing-github-repositories" class="level4">
 <h4 class="anchored" data-anchor-id="citing-github-repositories">Citing GitHub repositories</h4>
@@ -371,28 +375,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You can also add a <a href="https://gist.github.com/seignovert/ae6771f400ca464d294261f42900823a">neat little badge</a> to your <code>README.md</code> to link to the Zenodo page!</p>
 <p>For stuff that’s more like tooling, rather than novel data analysis/processing, we could consider a submission to the <a href="https://joss.theoj.org/"><em>Journal of Open Source Software</em></a>. This differs from a normal journal in that papers are usually ~2 pages long, and focus more on the software than the application. Writing them is intended to be much simpler than a normal paper - the hard work is in developing the software itself!</p>
 </section>
-</section>
-</section>
-<section id="general-thoughts" class="level2">
-<h2 class="anchored" data-anchor-id="general-thoughts">General thoughts</h2>
-<ul>
-<li><p>Don’t worry about perfection straight away. Issues are where all your messy ideas can live. Worry about polish just before you’re ready to merge it in.</p></li>
-<li><p>Documentation is key! You’re more likely to waste time/be stressed/want to quit academia when you can’t remember how and why you did anything down the line (and neither can your colleagues) writing a paper than you will spending 10 minutes a day/week writing documentation and populating Issues.</p></li>
-<li><p>These might seem like restrictive or time-consuming behaviours, but they are standard practice for software developers <em>for a reason</em> - because they work.</p>
-<ul>
-<li>Software developers spend as much as possible trying to minimise the amount of work needing to be done so take heed their advice!</li>
-</ul></li>
-<li><p>If a PR is hard to review, it is probably too big - in which case it is better to split across multiple issues/PRs.</p>
-<ul>
-<li>Not a particularly good heuristic for how big one should be - just make it as big as it needs to be but no bigger. The more moving parts there are the time it takes to review scales non-linearly!</li>
-</ul></li>
-<li><p>Sharing code/putting it out for review, particularly as an academic rather than a software developer can seem daunting! But remember that these processes are there to make things better for everyone - this lets us all combine our strengths and learn things from one another.</p>
-<ul>
-<li>Feel free to request an RSE reviewer as well as an academic colleague - even if we don’t have time the worst we can do is say “no sorry”!</li>
-</ul></li>
-<li><p>Reach out to me if you have questions. Chances are it will save you trawling through StackOverflow.</p></li>
-<li><p><strong><em>Don’t worry if you don’t follow all of the guidelines all of the time</em></strong>! The intent is to improve the way we work, not to enforce orthodoxy for its own sake. That said, do try and use them as much as you can!</p></li>
-</ul>
 <section id="some-example-issues-and-prs" class="level4">
 <h4 class="anchored" data-anchor-id="some-example-issues-and-prs">Some example Issues and PRs:</h4>
 <ul>
@@ -400,6 +382,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://github.com/Imago-SDRUK/Imago/issues/21">https://github.com/Imago-SDRUK/Imago/issues/21</a> - example of an Issue for a long-term piece of work to be worked on later</li>
 <li><a href="https://github.com/Imago-SDRUK/Imago/pull/13">https://github.com/Imago-SDRUK/Imago/pull/13</a> - example of a decent-sized PR with code review</li>
 </ul>
+</section>
 </section>
 </section>
 <section id="final-talking-points" class="level2">
