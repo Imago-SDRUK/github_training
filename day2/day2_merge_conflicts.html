@@ -373,10 +373,10 @@ Tip
 <h4 class="anchored" data-anchor-id="prevention-is-better-than-cure">Prevention is better than cure</h4>
 <p>The best way to deal with this is to avoid overuse of Jupyter notebooks, and follow practices that minimise problems for ones you <em>do</em> use:</p>
 <ul>
-<li>move <em>core logic</em> to scripts (R/Python)</li>
+<li>move core logic to scripts (R/Python)</li>
 <li>Strip outputs from notebooks before committing. If outputs are clear, there are no execution counts or other metadata to worry about.
 <ul>
-<li>There <em>are ways</em> to automate this process - get in touch if useful</li>
+<li>There are ways to automate this process - get in touch if useful</li>
 </ul></li>
 <li>Don’t work collaboratively on the <em>same parts</em> of notebooks where possible!</li>
 </ul>
@@ -390,7 +390,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Unfortunately, the <em>outputs</em> are the cause of all of the issues here. The best bet in this instance is to save whatever assets you want from the notebook(s) and upload separately. Or better yet, provide a link to where someone can obtain the necessary data/dependencies so that they can run <em>locally</em> to reproduce.</p>
+<p>Unfortunately, the <em>outputs</em> are the cause of all of the issues here. The best bet in this instance is to save whatever assets you want from the notebook(s) and upload separately. Or better yet, provide a link to where someone can obtain the necessary data/dependencies so that they can run locally to reproduce.</p>
 <p>If they <em>really are that important</em> - then you will have to just face resolving the merge conflict each time.</p>
 </div>
 </div>
@@ -407,7 +407,7 @@ Tip
 <p>Sometimes it is necessary to work on Jupyter notebooks collaboratively e.g.&nbsp;when developing training material. In this case, try to break up the content as much as possible into separate notebooks, add new cells rather than edit existing ones, and <em>communicate within your team who is working on what</em> to avoid as much overlap as possible. Again, the same advice on clearing outputs applies.</p>
 </div>
 </div>
-<p>In general, Jupyter notebooks are a pain to work with for team projects. They are fantastic for exploratory work, pedagogy and demos, but for this (and other!) reasons, they aren’t ideal for work you want to actually put into production.</p>
+<p>In general, Jupyter notebooks are a pain to work with for team projects. They are fantastic for exploratory work, teaching and demos, but for this (and other!) reasons, they aren’t ideal for work you want to actually put into production.</p>
 </section>
 </section>
 <section id="the-truly-nasty" class="level3">
@@ -479,9 +479,26 @@ Tip
 </section>
 <section id="take-homes-on-merge-conflicts" class="level2">
 <h2 class="anchored" data-anchor-id="take-homes-on-merge-conflicts">Take-homes on merge conflicts</h2>
-<p>To solve merge conflicts: - Pull latest main - Merge main into your branch - Open conflicts in VSCode - Pick or combine changes - Delete conflict markers - Commit and push</p>
-<p>Remember: - Merge conflicts don’t mean something is <em>wrong</em> - just that Git needs you to make some choices on what is <em>right</em>. - Repeated and painful merge conflicts result from procedural issues, not a lack of Git skills! i.e. - branches are too long‑lived - PRs are too large - generated files are being committed - intent isn’t captured in Issues - Jupyter notebooks are being edited by multiple people</p>
+<p>To solve merge conflicts:</p>
 <ul>
+<li>Pull latest main</li>
+<li>Merge main into your branch</li>
+<li>Open conflicts in VSCode</li>
+<li>Pick or combine changes</li>
+<li>Delete conflict markers</li>
+<li>Commit and push</li>
+</ul>
+<p>Remember:</p>
+<ul>
+<li>Merge conflicts don’t mean something is <em>wrong</em> - just that Git needs you to make some choices on what is <em>right</em>.</li>
+<li>Repeated and painful merge conflicts result from procedural issues, not a lack of Git skills! i.e.
+<ul>
+<li>branches are too long‑lived</li>
+<li>PRs are too large</li>
+<li>generated files are being committed</li>
+<li>intent isn’t captured in Issues</li>
+<li>Jupyter notebooks are being edited by multiple people</li>
+</ul></li>
 <li><strong>GitHub is meant to make teamwork easier, not harder — if it <em>is</em> making things harder, stop and get help.</strong></li>
 </ul>
 
