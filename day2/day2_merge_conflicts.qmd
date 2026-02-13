@@ -138,7 +138,7 @@ add new cells rather than edit existing ones, and *communicate within your team 
 
 :::
 
-In general, Jupyter notebooks are a pain to work with for team projects. They are fantastic for exploratory work, pedagogy and demos,
+In general, Jupyter notebooks are a pain to work with for team projects. They are fantastic for exploratory work, teaching and demos,
 but for this (and other!) reasons, they aren't ideal for work you want to actually put into production. 
 
 ### The truly nasty 
@@ -217,6 +217,7 @@ Everything from Session 1 helps; good documentation, small PRs, and short-lived 
 ## Take-homes on merge conflicts
 
 To solve merge conflicts:
+
 - Pull latest main
 - Merge main into your branch
 - Open conflicts in VSCode
@@ -225,6 +226,7 @@ To solve merge conflicts:
 - Commit and push
 
 Remember:
+
 - Merge conflicts don't mean something is *wrong* - just that Git needs you to make some choices on what is *right*.
 - Repeated and painful merge conflicts result from procedural issues, not a lack of Git skills! i.e.
 	- branches are too long‑lived
