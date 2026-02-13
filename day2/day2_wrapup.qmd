@@ -123,4 +123,5 @@ Writing them is intended to be much simpler than a normal paper - the hard work 
 
 - Is it worth adding restrictions on committing to `main` directly? GitHub can let us do this.
 - Similarly, we *could* place restrictions on who is able to merge PRs.
+
 ---

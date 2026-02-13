@@ -15,12 +15,16 @@ We want to choose the version that best represents what we need for the project.
 For code, this often means keeping parts of both versions.
 For more complex formats (Jupyter notebooks, PDFs, other binaries), we may only be able to keep one.
 
-#### Why do merge conflicts occur? 
+:::{.callout-important}
+# Merge conflicts are A Good Thing, Actually 
 
-::: {callout.important}
- Merge conflicts don't mean you've done something wrong! They are a normal consequence of collaborative work. Don't panic! 
+Merge conflicts don't mean you've done something wrong! They are a normal consequence of collaborative work. 
+
+If `git` didn't throw merge conflicts, it would be trivial to accidentally overwrite and delete someone else's work.
 
 :::
+
+#### Why do merge conflicts occur? 
 
 Conflicts happen when two branches change the same part of the same file differently.
 
@@ -44,15 +48,20 @@ branch B2:       - B2 - - - - -
 ```
 
 If both branches changed different parts of the file, Git will resolve it automatically.
+
 If both changed the same part, Git asks you to *choose*.
 
 :::{.callout-tip}
+# This problem is worse if we commit to `main` directly. 
 
 In this example, branches B1 and B2 could have many many different commits before they get pulled in.
 
-If all of those commits had been made to `main`, then the number of merge conflicts could have been much higher - imagine if every single commit was a separate branch!
+If all of those commits had been made to `main`, then the number of merge conflicts could have been much higher; 
+instead of every PR/merge triggering this behaviour, it would happen for *every commit*! 
 
 :::
+
+
 
 ## Resolving merge conflicts
 
@@ -90,39 +99,102 @@ The "incoming" changes in this case is the `main` branch that you are trying to 
 You can then fix the merge conflict by removing the extra `git` padding and code from the version you don't want to keep.
 
 :::{.callout-tip}
-On GitHub or in VSCode, there are buttons you can click to select which set of changes you want to keep - this will fix the formatting automatically. 
+On GitHub or in VSCode/GitHub Desktop, there are buttons you can click to select which set of changes you want to keep - this will fix the formatting automatically. 
 
 :::
 
 ### The not-so-nice version
 
-Jupyter notebooks are another major source of merge conflicts. In principle, it is easy enough to track changes in these files since they are text *format*, just with much more text to edit. 
+Jupyter notebooks are another major source of merge conflicts. They are especially volatile as it is 
+very easy to make *unintended changes* to cells - e.g. by simply re-running them. This makes them often trigger merge conflicts,
+*particularly* with a "commit-to-`main`" workflow.
+
+In principle, it is easy enough to track changes in these files since they are text *format*, just with much more text to edit. 
 However, since e.g. cell execution counts/output can change, this makes it very complex in practice. 
 
-Possible solutions are:
+#### Prevention is better than cure 
+
+The best way to deal with this is to avoid overuse of Jupyter notebooks, and follow practices that minimise problems for ones you *do* use:
 
 - move *core logic* to scripts (R/Python)
-- Strip outputs from notebooks before committing - these are likely causes of complex diffs (e.g. execution counts). 
-- Don't work collaboratively on notebooks where possible - this is likely to cause merge conflicts. 
- 
-:::{.callout-tip}
-Sometimes it is necessary to work on Jupyter notebooks collaboratively e.g. when developing training material. In this case, try to break up the content as much as possible into separate notebooks, add new cells rather than edit existing ones, and *communicate within your team who is working on what* to avoid as much overlap as possible.
+- Strip outputs from notebooks before committing. If outputs are clear, there are no execution counts or other metadata to worry about.
+	- There *are ways* to automate this process - get in touch if useful
+- Don't work collaboratively on the *same parts* of notebooks where possible!
+
+:::{.callout}
+# But I want to see outputs...
+
+Unfortunately, the *outputs* are the cause of all of the issues here. The best bet in this instance is to save whatever assets you want from the notebook(s)
+and upload separately. Or better yet, provide a link to where someone can obtain the necessary data/dependencies so that they can run *locally* to reproduce.
+
+If they *really are that important* - then you will have to just face resolving the merge conflict each time.
 :::
+ 
+:::{.callout}
+# ... and I need to work collaboratively on them! 
+
+Sometimes it is necessary to work on Jupyter notebooks collaboratively e.g. when developing training material. In this case, try to break up the content as much as possible into separate notebooks, 
+add new cells rather than edit existing ones, and *communicate within your team who is working on what* to avoid as much overlap as possible. Again, the same advice on clearing outputs applies.
+
+:::
+
+In general, Jupyter notebooks are a pain to work with for team projects. They are fantastic for exploratory work, pedagogy and demos,
+but for this (and other!) reasons, they aren't ideal for work you want to actually put into production. 
 
 ### The truly nasty 
 
-Binaries and generated outputs are the absolute worst merge conflicts to deal with. These *cannot be merged* - you must pick one version of the file to keep.
+Binaries and generated outputs are the worst merge conflicts to deal with. These *cannot be merged* - you must pick one version of the file to keep.
 They aren't possible to resolve via GitHub - you have to use the `git` command-line interface or a graphical application like VSCode to solve them.
 
+**However** - in most cases, we don't actually *want* binaries written into our repositories! We are far more interested in the means of generating these (code, Markdown) than the 
+actual files themselves. 
+
 ::: {.callout-tip}
+# An example - Quarto
 
-The advice is - **keep these files out of GitHub repositories**! GitHub should store the software that *generates* these files, and perhaps the *inputs* to these files in some cases, but *not* the files themselves. 
+Quarto generates `.html` and `.pdf` files when running e.g. `quarto render`. However, these files are *not what is important* for us to keep track of
+- we can entirely reproduce them just from the `.qmd` files (i.e. the bits we actually write!).
 
-If you *need* the `.html` or `.pdf` in your repository, use GitHub Actions to generate them automatically (ask the RSE team if you want help with this!). 
+It is likely that we will encounter issues if uploading them - particularly as people may have different compilers/extensions installed locally. 
+The solution is to have 
 
-Then we have *one* canonical compiler and workflow that generates everything - no issues from people compiling locally. 
+We can use GitHub Actions to do this automatically whenever we merge a pull request. 
+The GitHub Actions runner can install all of the required dependencies and extensions, build the `.html` or `.pdf` and 
+commit it to a branch - these can then be downloaded freely, or pushed automatically to GitHub Pages.
 
-If this isn't workable, at the very least, set up an Issue and document/ensure that everyone in the team uses the *exact* same versions of everything. 
+This means that the *only* files that need to live
+in the directory are the `.qmd` files and any assets (e.g. images) embedded in them. Everything else is loaded in and set up in the GitHub Actions workflow.
+
+Feel free to reach out to me if you want any help setting this up for your repository. 
+
+:::
+
+#### `.gitignore` is your friend!
+
+We'll often want to compile locally to test that our changes have worked - so we will end up with these files in our local workspaces.
+
+We do however want to ensure that they *don't* end up in our team repository! To do this, we can add them to `.gitignore`. Then, when running `git add` (or equivalent), 
+we make sure these files are not uploaded. For example:
+
+```yaml
+# Quarto outputs
+/_site/
+/.quarto/
+/_book/
+/_freeze/
+/docs/
+
+```
+
+You should also use this for other files that your IDE/OS generates - e.g. `.DS_Store` on MacOSX, `.idea` for PyCharm, `.vscode` for VSCode etc.
+
+## Demo - resolving different types of merge conflict
+
+:::{.callout}
+Live demo time! We will navigate to our demo repository now. If you are interested in actually *doing the commands yourselves*, 
+please feel free to do so in your fork.
+
+We will be using GitHub Desktop for this - but the principles work exactly the same if using the CLI or VSCode/PyCharm/etc. extensions.
 
 :::
 
@@ -141,23 +213,6 @@ Everything from Session 1 helps; good documentation, small PRs, and short-lived 
 - Use Issues to track what is being worked on! This way, someone can see that you are working on a file, and see any changes coming. 
 - Keep repositories clean of unnecessary files - like non-critical data, plots, VSCode environment data, etc. Use `.gitignore` for these.
 - *Communicate with your team* - if your work doesn't overlap, then merge conflicts don't happen.  
-
-#### I've followed all your advice and I'm still getting merge conflicts! What do I do? 
-
-If resolving a merge conflict is taking more than 10 minutes, stop. Get in touch with one of the RSEs for help/guidance.  
-
-These are some heuristics to keep in mind when dealing with specific files:
-
-- Binary files (e.g. `.pdf`):
-	- Git *cannot resolve these conflicts*. There is only one winner - pick the version you want to keep (the one already in `main`, or the one from your branch) and one you want to "remove" 
-		- (remember it will still be accessible via the commit history)
-
-- Jupyter notebooks:
-	- Pick *one* version as the "correct one". 
-	- If the notebooks differ in some way, *don't* try and merge them with diffs. It is going to be much more practical to just manually take the bits you need from one notebook and paste them into another, re-commit then pick that new version. Looking at the notebook manually to do this shouldn't be overly time consuming.
-		- And if it isn't, your notebook is too large/doing too many things.
-
-> Live demo - merging binary and Jupyter notebooks with conflicts, using GitHub Desktop.
 
 ## Take-homes on merge conflicts
 
