@@ -78,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-00ccf60c28c3bdf2d57f5131fbf16f11.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -238,6 +238,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#what-is-a-merge-conflict" id="toc-what-is-a-merge-conflict" class="nav-link active" data-scroll-target="#what-is-a-merge-conflict">What is a merge conflict?</a></li>
   <li><a href="#resolving-merge-conflicts" id="toc-resolving-merge-conflicts" class="nav-link" data-scroll-target="#resolving-merge-conflicts">Resolving merge conflicts</a></li>
+  <li><a href="#demo---resolving-different-types-of-merge-conflict" id="toc-demo---resolving-different-types-of-merge-conflict" class="nav-link" data-scroll-target="#demo---resolving-different-types-of-merge-conflict">Demo - resolving different types of merge conflict</a></li>
   <li><a href="#how-do-we-avoid-them-in-the-first-place" id="toc-how-do-we-avoid-them-in-the-first-place" class="nav-link" data-scroll-target="#how-do-we-avoid-them-in-the-first-place">How do we avoid them in the first place?</a></li>
   <li><a href="#take-homes-on-merge-conflicts" id="toc-take-homes-on-merge-conflicts" class="nav-link" data-scroll-target="#take-homes-on-merge-conflicts">Take-homes on merge conflicts</a></li>
   </ul>
@@ -277,11 +278,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </blockquote>
 <p>We want to choose the version that best represents what we need for the project.</p>
 <p>For code, this often means keeping parts of both versions. For more complex formats (Jupyter notebooks, PDFs, other binaries), we may only be able to keep one.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Merge conflicts are A Good Thing, Actually
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Merge conflicts don’t mean you’ve done something wrong! They are a normal consequence of collaborative work.</p>
+<p>If <code>git</code> didn’t throw merge conflicts, it would be trivial to accidentally overwrite and delete someone else’s work.</p>
+</div>
+</div>
 <section id="why-do-merge-conflicts-occur" class="level4">
 <h4 class="anchored" data-anchor-id="why-do-merge-conflicts-occur">Why do merge conflicts occur?</h4>
-<div class="{callout.important}">
-<p>Merge conflicts don’t mean you’ve done something wrong! They are a normal consequence of collaborative work. Don’t panic!</p>
-</div>
 <p>Conflicts happen when two branches change the same part of the same file differently.</p>
 <blockquote class="blockquote">
 <p>They are a problem specific to collaborative work.</p>
@@ -299,19 +311,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">main</span><span class="kw">:</span><span class="at">      A0 ----------- A1 --- ?</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">               \                /</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">branch B2</span><span class="kw">:</span><span class="at">       - B2 - - - - - </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If both branches changed different parts of the file, Git will resolve it automatically. If both changed the same part, Git asks you to <em>choose</em>.</p>
+<p>If both branches changed different parts of the file, Git will resolve it automatically.</p>
+<p>If both changed the same part, Git asks you to <em>choose</em>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+<span class="screen-reader-only">Tip</span>This problem is worse if we commit to <code>main</code> directly.
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>In this example, branches B1 and B2 could have many many different commits before they get pulled in.</p>
-<p>If all of those commits had been made to <code>main</code>, then the number of merge conflicts could have been much higher - imagine if every single commit was a separate branch!</p>
+<p>If all of those commits had been made to <code>main</code>, then the number of merge conflicts could have been much higher; instead of every PR/merge triggering this behaviour, it would happen for <em>every commit</em>!</p>
 </div>
 </div>
 </section>
@@ -348,53 +361,103 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>On GitHub or in VSCode, there are buttons you can click to select which set of changes you want to keep - this will fix the formatting automatically.</p>
+<p>On GitHub or in VSCode/GitHub Desktop, there are buttons you can click to select which set of changes you want to keep - this will fix the formatting automatically.</p>
 </div>
 </div>
 </section>
 <section id="the-not-so-nice-version" class="level3">
 <h3 class="anchored" data-anchor-id="the-not-so-nice-version">The not-so-nice version</h3>
-<p>Jupyter notebooks are another major source of merge conflicts. In principle, it is easy enough to track changes in these files since they are text <em>format</em>, just with much more text to edit. However, since e.g.&nbsp;cell execution counts/output can change, this makes it very complex in practice.</p>
-<p>Possible solutions are:</p>
+<p>Jupyter notebooks are another major source of merge conflicts. They are especially volatile as it is very easy to make <em>unintended changes</em> to cells - e.g.&nbsp;by simply re-running them. This makes them often trigger merge conflicts, <em>particularly</em> with a “commit-to-<code>main</code>” workflow.</p>
+<p>In principle, it is easy enough to track changes in these files since they are text <em>format</em>, just with much more text to edit. However, since e.g.&nbsp;cell execution counts/output can change, this makes it very complex in practice.</p>
+<section id="prevention-is-better-than-cure" class="level4">
+<h4 class="anchored" data-anchor-id="prevention-is-better-than-cure">Prevention is better than cure</h4>
+<p>The best way to deal with this is to avoid overuse of Jupyter notebooks, and follow practices that minimise problems for ones you <em>do</em> use:</p>
 <ul>
 <li>move <em>core logic</em> to scripts (R/Python)</li>
-<li>Strip outputs from notebooks before committing - these are likely causes of complex diffs (e.g.&nbsp;execution counts).</li>
-<li>Don’t work collaboratively on notebooks where possible - this is likely to cause merge conflicts.</li>
+<li>Strip outputs from notebooks before committing. If outputs are clear, there are no execution counts or other metadata to worry about.
+<ul>
+<li>There <em>are ways</em> to automate this process - get in touch if useful</li>
+</ul></li>
+<li>Don’t work collaboratively on the <em>same parts</em> of notebooks where possible!</li>
 </ul>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-simple callout-none no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+<span class="screen-reader-only">None</span>But I want to see outputs…
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Sometimes it is necessary to work on Jupyter notebooks collaboratively e.g.&nbsp;when developing training material. In this case, try to break up the content as much as possible into separate notebooks, add new cells rather than edit existing ones, and <em>communicate within your team who is working on what</em> to avoid as much overlap as possible.</p>
+<p>Unfortunately, the <em>outputs</em> are the cause of all of the issues here. The best bet in this instance is to save whatever assets you want from the notebook(s) and upload separately. Or better yet, provide a link to where someone can obtain the necessary data/dependencies so that they can run <em>locally</em> to reproduce.</p>
+<p>If they <em>really are that important</em> - then you will have to just face resolving the merge conflict each time.</p>
 </div>
 </div>
+<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">None</span>… and I need to work collaboratively on them!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sometimes it is necessary to work on Jupyter notebooks collaboratively e.g.&nbsp;when developing training material. In this case, try to break up the content as much as possible into separate notebooks, add new cells rather than edit existing ones, and <em>communicate within your team who is working on what</em> to avoid as much overlap as possible. Again, the same advice on clearing outputs applies.</p>
+</div>
+</div>
+<p>In general, Jupyter notebooks are a pain to work with for team projects. They are fantastic for exploratory work, pedagogy and demos, but for this (and other!) reasons, they aren’t ideal for work you want to actually put into production.</p>
+</section>
 </section>
 <section id="the-truly-nasty" class="level3">
 <h3 class="anchored" data-anchor-id="the-truly-nasty">The truly nasty</h3>
-<p>Binaries and generated outputs are the absolute worst merge conflicts to deal with. These <em>cannot be merged</em> - you must pick one version of the file to keep. They aren’t possible to resolve via GitHub - you have to use the <code>git</code> command-line interface or a graphical application like VSCode to solve them.</p>
+<p>Binaries and generated outputs are the worst merge conflicts to deal with. These <em>cannot be merged</em> - you must pick one version of the file to keep. They aren’t possible to resolve via GitHub - you have to use the <code>git</code> command-line interface or a graphical application like VSCode to solve them.</p>
+<p><strong>However</strong> - in most cases, we don’t actually <em>want</em> binaries written into our repositories! We are far more interested in the means of generating these (code, Markdown) than the actual files themselves.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+<span class="screen-reader-only">Tip</span>An example - Quarto
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The advice is - <strong>keep these files out of GitHub repositories</strong>! GitHub should store the software that <em>generates</em> these files, and perhaps the <em>inputs</em> to these files in some cases, but <em>not</em> the files themselves.</p>
-<p>If you <em>need</em> the <code>.html</code> or <code>.pdf</code> in your repository, use GitHub Actions to generate them automatically (ask the RSE team if you want help with this!).</p>
-<p>Then we have <em>one</em> canonical compiler and workflow that generates everything - no issues from people compiling locally.</p>
-<p>If this isn’t workable, at the very least, set up an Issue and document/ensure that everyone in the team uses the <em>exact</em> same versions of everything.</p>
+<p>Quarto generates <code>.html</code> and <code>.pdf</code> files when running e.g.&nbsp;<code>quarto render</code>. However, these files are <em>not what is important</em> for us to keep track of - we can entirely reproduce them just from the <code>.qmd</code> files (i.e.&nbsp;the bits we actually write!).</p>
+<p>It is likely that we will encounter issues if uploading them - particularly as people may have different compilers/extensions installed locally. The solution is to have</p>
+<p>We can use GitHub Actions to do this automatically whenever we merge a pull request. The GitHub Actions runner can install all of the required dependencies and extensions, build the <code>.html</code> or <code>.pdf</code> and commit it to a branch - these can then be downloaded freely, or pushed automatically to GitHub Pages.</p>
+<p>This means that the <em>only</em> files that need to live in the directory are the <code>.qmd</code> files and any assets (e.g.&nbsp;images) embedded in them. Everything else is loaded in and set up in the GitHub Actions workflow.</p>
+<p>Feel free to reach out to me if you want any help setting this up for your repository.</p>
 </div>
 </div>
+<section id="gitignore-is-your-friend" class="level4">
+<h4 class="anchored" data-anchor-id="gitignore-is-your-friend"><code>.gitignore</code> is your friend!</h4>
+<p>We’ll often want to compile locally to test that our changes have worked - so we will end up with these files in our local workspaces.</p>
+<p>We do however want to ensure that they <em>don’t</em> end up in our team repository! To do this, we can add them to <code>.gitignore</code>. Then, when running <code>git add</code> (or equivalent), we make sure these files are not uploaded. For example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Quarto outputs</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">/_site/</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">/.quarto/</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">/_book/</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">/_freeze/</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">/docs/</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should also use this for other files that your IDE/OS generates - e.g.&nbsp;<code>.DS_Store</code> on MacOSX, <code>.idea</code> for PyCharm, <code>.vscode</code> for VSCode etc.</p>
 </section>
+</section>
+</section>
+<section id="demo---resolving-different-types-of-merge-conflict" class="level2">
+<h2 class="anchored" data-anchor-id="demo---resolving-different-types-of-merge-conflict">Demo - resolving different types of merge conflict</h2>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Live demo time! We will navigate to our demo repository now. If you are interested in actually <em>doing the commands yourselves</em>, please feel free to do so in your fork.</p>
+<p>We will be using GitHub Desktop for this - but the principles work exactly the same if using the CLI or VSCode/PyCharm/etc. extensions.</p>
+</div>
+</div>
+</div>
 <section id="committing-the-merged-changes" class="level3">
 <h3 class="anchored" data-anchor-id="committing-the-merged-changes">Committing the merged changes</h3>
 <p>Once you have resolved the conflict, you should commit-and-push your branch - it should now be ready for merging (subject to <a href="../day2/day2_code_review.html">review!</a>).</p>
@@ -413,31 +476,6 @@ Tip
 <li>Keep repositories clean of unnecessary files - like non-critical data, plots, VSCode environment data, etc. Use <code>.gitignore</code> for these.</li>
 <li><em>Communicate with your team</em> - if your work doesn’t overlap, then merge conflicts don’t happen.</li>
 </ul>
-<section id="ive-followed-all-your-advice-and-im-still-getting-merge-conflicts-what-do-i-do" class="level4">
-<h4 class="anchored" data-anchor-id="ive-followed-all-your-advice-and-im-still-getting-merge-conflicts-what-do-i-do">I’ve followed all your advice and I’m still getting merge conflicts! What do I do?</h4>
-<p>If resolving a merge conflict is taking more than 10 minutes, stop. Get in touch with one of the RSEs for help/guidance.</p>
-<p>These are some heuristics to keep in mind when dealing with specific files:</p>
-<ul>
-<li>Binary files (e.g.&nbsp;<code>.pdf</code>):
-<ul>
-<li>Git <em>cannot resolve these conflicts</em>. There is only one winner - pick the version you want to keep (the one already in <code>main</code>, or the one from your branch) and one you want to “remove”
-<ul>
-<li>(remember it will still be accessible via the commit history)</li>
-</ul></li>
-</ul></li>
-<li>Jupyter notebooks:
-<ul>
-<li>Pick <em>one</em> version as the “correct one”.</li>
-<li>If the notebooks differ in some way, <em>don’t</em> try and merge them with diffs. It is going to be much more practical to just manually take the bits you need from one notebook and paste them into another, re-commit then pick that new version. Looking at the notebook manually to do this shouldn’t be overly time consuming.
-<ul>
-<li>And if it isn’t, your notebook is too large/doing too many things.</li>
-</ul></li>
-</ul></li>
-</ul>
-<blockquote class="blockquote">
-<p>Live demo - merging binary and Jupyter notebooks with conflicts, using GitHub Desktop.</p>
-</blockquote>
-</section>
 </section>
 <section id="take-homes-on-merge-conflicts" class="level2">
 <h2 class="anchored" data-anchor-id="take-homes-on-merge-conflicts">Take-homes on merge conflicts</h2>
