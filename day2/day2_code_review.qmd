@@ -16,7 +16,7 @@ Pick a colleague who is:
 
 You should use the buttons to assign them to be a reviewer - this is not a faux pas, but a useful way to draw someone's attention to some work they're probably interested in. 
 
-![](../assets/day2/day2_choose_reviewer.png)
+![](../assets/day2/day2-choose-reviewer.png)
 
 ### Being a reviewer
 
