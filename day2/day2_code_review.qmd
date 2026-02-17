@@ -64,7 +64,7 @@ It might seem like a lot of work, but in the long run it will save *everyone* ti
 
 :::{.callout}
 # Exercise
-We will go through PR #N in the demo repository. 
+We will go through a real pull request and think about how we might begin to review it. 
 
 :::
 
