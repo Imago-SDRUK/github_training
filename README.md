@@ -1,7 +1,6 @@
 
-[[![DOI](https://zenodo.org/badge/1148000936.svg)](https://zenodo.org/badge/latestdoi/1148000936)
-](https://doi.org/10.5281/zenodo.18771673)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18771673.svg)](https://doi.org/10.5281/zenodo.18771673)
 # GitHub training for Imago staff
 
 This repository contains materials used to train staff working on Imago data products on how to use GitHub effectively. 
