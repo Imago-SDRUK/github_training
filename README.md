@@ -1,5 +1,6 @@
 
-[![DOI](https://zenodo.org/badge/1148000936.svg)](https://zenodo.org/badge/latestdoi/1148000936)
+[[![DOI](https://zenodo.org/badge/1148000936.svg)](https://zenodo.org/badge/latestdoi/1148000936)
+](https://doi.org/10.5281/zenodo.18771673)
 
 # GitHub training for Imago staff
 
